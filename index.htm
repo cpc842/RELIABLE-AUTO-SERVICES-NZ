@@ -23,8 +23,10 @@
         /* ===== NAVBAR ===== */
         .navigation-section{background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);padding:10px 0;box-shadow:0 4px 20px rgba(0,0,0,.1);position:sticky;top:0;z-index:10}
         .nav-container{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:auto;padding:0 20px}
-        .nav-brand img{height:40px;vertical-align:middle}
-        .nav-links a{color:white;text-decoration:none;margin-left:20px;font-weight:500;transition:color .3s ease}
+        .nav-brand{display:flex;align-items:center;color:#fff;font-weight:700;font-size:1.1rem;letter-spacing:.5px}
+        .nav-brand img{height:40px;margin-right:8px;vertical-align:middle}
+        .nav-brand span{color:#00c3ff}
+        .nav-links a{color:#fff;text-decoration:none;margin-left:20px;font-weight:500;transition:color .3s ease}
         .nav-links a:hover{color:#00c3ff}
 
         /* ===== HERO  ===== */
@@ -34,23 +36,21 @@
         #about{padding:80px 20px;background:#f9fbfd}
         .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-top:40px}
 
-        /* ===== SERVICES – ORIGINAL 4 ===== -->
+        /* ===== SERVICES – ORIGINAL 4 CARDS ===== */
         #services{padding:80px 20px;max-width:1200px;margin:auto}
         .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px}
         .card{background:white;padding:30px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.1);text-align:center;transition:transform .3s ease,box-shadow .3s ease}
         .card:hover{transform:translateY(-10px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
-
-        /* ===== FOOTER  ===== -->
-        #contact{background:linear-gradient(135deg,#0b1c2d,#1a2b3c);color:white;text-align:center;padding:40px 20px}
     </style>
 </head>
 <body>
 
-<!-- NAVBAR (logo left, menu right) -->
+<!-- NAVBAR (logo + name left) -->
 <nav class="navigation-section fade-in">
     <div class="nav-container">
         <div class="nav-brand">
-            <a href="#home"><img src="logo.png" alt="Reliable Auto Services NZ Logo" style="height:40px"></a>
+            <img src="logo.png" alt="Reliable Auto Services NZ Logo">
+            <span>RELIABLE AUTO SERVICES NZ</span>
         </div>
         <div class="nav-links">
             <a href="#home">Home</a>
@@ -98,7 +98,7 @@
     </div>
 </section>
 
-<!-- SERVICES – ORIGINAL 4 CARDS -->
+<!-- SERVICES – ORIGINAL 4 CARDS ONLY -->
 <section id="services">
     <div style="padding:80px 20px;max-width:1200px;margin:auto">
         <h2 style="text-align:center;font-size:2.5rem;margin-bottom:40px">Our Services</h2>
