@@ -23,10 +23,13 @@
         /* ===== HEADER  ===== */
         .header-section{background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);padding:30px 0;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.1)}
 
-        /* ===== NAVIGATION  ===== */
-        .navigation-section{background:rgba(17,17,17,.95);padding:15px 0;text-align:center;backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
-        .navigation-section a{color:white;text-decoration:none;margin:0 20px;font-weight:500;transition:color .3s ease}
-        .navigation-section a:hover{color:#00c3ff}
+        /* ===== NAVBAR SPLIT ===== */
+        .navigation-section{background:rgba(17,17,17,.95);padding:12px 0;backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
+        .nav-container{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:auto;padding:0 20px}
+        .nav-brand a{font-size:1.1rem;font-weight:600;color:white;text-decoration:none;display:flex;align-items:center}
+        .nav-brand i{color:#00c3ff;margin-right:6px}
+        .nav-links a{color:white;text-decoration:none;margin-left:20px;font-weight:500;transition:color .3s ease}
+        .nav-links a:hover{color:#00c3ff}
 
         /* ===== HERO  ===== */
         .hero-section{background:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),url("https://images.unsplash.com/photo-1503376780353-7e6692767b70") center/cover;height:500px;display:flex;align-items:center;justify-content:center;color:white;text-align:center}
@@ -49,17 +52,24 @@
 
 <!-- HEADER -->
 <header class="header-section fade-in">
-    <img src="logo.png" alt="Reliable Auto Services NZ Logo" style="width:180px;margin-bottom:15px">
+    <img src="logo.png" alt="Reliable Auto Services NZ Logo" style="width:200px;margin-bottom:15px">
     <h1 style="color:white;font-size:2.5rem;margin:0">RELIABLE AUTO SERVICES NZ</h1>
     <p style="color:#00c3ff;font-size:1.1rem;margin-top:10px">THE GENTLEMEN OF THE AUTOMOTIVE INDUSTRY</p>
 </header>
 
 <!-- NAVIGATION -->
 <nav class="navigation-section fade-in">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="#home"><i class="fas fa-car"></i>Reliable Auto NZ</a>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
 </nav>
 
 <!-- HERO -->
@@ -71,7 +81,7 @@
     </div>
 </section>
 
-<!-- ABOUT (first after hero) -->
+<!-- ABOUT -->
 <section id="about" class="fade-in">
     <div style="max-width:900px;margin:auto;text-align:center;padding:80px 20px;background:#f9fbfd">
         <h2 style="font-size:2.5rem;margin-bottom:20px">About Reliable Auto Services NZ</h2>
@@ -101,7 +111,7 @@
 
 <!-- SERVICES -->
 <section id="services">
-    <div class="services-grid" style="padding:80px 20px;max-width:1200px;margin:auto">
+    <div style="padding:80px 20px;max-width:1200px;margin:auto">
         <h2 style="text-align:center;font-size:2.5rem;margin-bottom:40px">Our Services</h2>
         <div class="services-grid">
             <div class="card">
