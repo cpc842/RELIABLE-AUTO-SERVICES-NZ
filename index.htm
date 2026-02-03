@@ -132,6 +132,21 @@ footer{
     text-align:center;
     padding:40px 20px
 }
+/* ===== WHATSAPP BUTTON ===== */
+.whatsapp-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    font-size:1.5rem;
+    padding:15px;
+    border-radius:50%;
+    box-shadow:0 4px 12px rgba(0,0,0,.3);
+    z-index:1000;
+    transition:transform .3s;
+}
+.whatsapp-btn:hover{transform:scale(1.1)}
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width:768px){
@@ -266,7 +281,9 @@ footer{
         <i class="fas fa-envelope"></i> hello@reliableautos.co.nz
     </p>
 </footer>
-
+    <!-- WhatsApp Floating Button -->
+<a href="https://wa.me/64123456789" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+    
 <!-- JS -->
 <script>
 const toggle=document.querySelector('.menu-toggle');
@@ -276,3 +293,4 @@ toggle.onclick=()=>nav.classList.toggle('active');
 
 </body>
 </html>
+
