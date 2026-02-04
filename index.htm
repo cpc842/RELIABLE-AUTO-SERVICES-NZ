@@ -11,7 +11,7 @@
 
 <style>
 /* ===== GLOBAL ===== */
-*{box-sizing:border-box}
+*{box-sizing:border-box;}
 body{
     margin:0;
     font-family:'Inter',sans-serif;
@@ -19,14 +19,10 @@ body{
     color:#333;
     line-height:1.6;
     overflow-x:hidden;
-    scroll-behavior:smooth
+    scroll-behavior:smooth;
 }
 
-/* ===== ANIMATIONS ===== */
-.fade-in{opacity:0;transform:translateY(30px);animation:fadeIn 1s ease forwards}
-@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
-
-/* ===== TYPEWRITER (PC ONLY) ===== */
+/* ===== TYPEWRITER ===== */
 .typewriter{
     font-size:3rem;
     color:white;
@@ -35,7 +31,7 @@ body{
     border-right:3px solid #00c3ff;
     white-space:nowrap;
     margin:auto;
-    animation:typing 3s steps(30,end),blink .75s step-end infinite
+    animation:typing 3s steps(30,end),blink .75s step-end infinite;
 }
 @keyframes typing{from{width:0}to{width:100%}}
 @keyframes blink{50%{border-color:#00c3ff}}
@@ -46,7 +42,7 @@ body{
     position:sticky;
     top:0;
     z-index:100;
-    box-shadow:0 4px 20px rgba(0,0,0,.1)
+    box-shadow:0 4px 20px rgba(0,0,0,.1);
 }
 .nav-container{
     max-width:1100px;
@@ -54,31 +50,29 @@ body{
     padding:10px 20px;
     display:flex;
     justify-content:space-between;
-    align-items:center
+    align-items:center;
 }
 .nav-brand{
     display:flex;
     align-items:center;
     color:white;
     font-weight:700;
-    font-size:1rem
+    font-size:1rem;
 }
-.nav-brand img{height:40px;margin-right:8px}
-.nav-brand span{color:#00c3ff}
-
+.nav-brand img{height:40px;margin-right:8px;}
+.nav-brand span{color:#00c3ff;}
 .nav-links a{
     color:white;
     text-decoration:none;
     margin-left:20px;
-    font-weight:500
+    font-weight:500;
 }
-.nav-links a:hover{color:#00c3ff}
-
+.nav-links a:hover{color:#00c3ff;}
 .menu-toggle{
     display:none;
     font-size:1.6rem;
     color:white;
-    cursor:pointer
+    cursor:pointer;
 }
 
 /* ===== HERO ===== */
@@ -91,26 +85,26 @@ body{
     align-items:center;
     justify-content:center;
     text-align:center;
-    color:white
+    color:white;
 }
 
 /* ===== ABOUT ===== */
-#about{padding:80px 20px;background:#f9fbfd}
+#about{padding:80px 20px;background:#f9fbfd;}
 .about-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:30px;
-    margin-top:40px
+    margin-top:40px;
 }
 
 /* ===== SERVICES ===== */
-#services{padding:80px 20px}
+#services{padding:80px 20px;}
 .services-grid{
     max-width:1200px;
     margin:auto;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px
+    gap:20px;
 }
 .card{
     background:white;
@@ -118,11 +112,19 @@ body{
     border-radius:15px;
     text-align:center;
     box-shadow:0 5px 15px rgba(0,0,0,.1);
-    transition:.3s
+    transition:.3s;
+    opacity:0;
+    transform:translateY(40px);
 }
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Hover animation */
 .card:hover{
     transform:translateY(-10px);
-    box-shadow:0 10px 30px rgba(0,0,0,.2)
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
 /* ===== FOOTER ===== */
@@ -130,51 +132,37 @@ footer{
     background:#1a1a1a;
     color:white;
     text-align:center;
-    padding:40px 20px
+    padding:40px 20px;
 }
-/* ===== WHATSAPP BUTTON FINAL SAFE ===== */
+
+/* ===== WHATSAPP BUTTON ===== */
 .whatsapp-btn{
     position:fixed;
     bottom:20px;
     right:20px;
     z-index:9999;
-    display:block;
-}
-
-.whatsapp-btn img{
-    width:60px;
-    height:60px;
-    display:block;
-}
-
-/* Animation */
-.whatsapp-btn{
+    background:#25D366;
+    color:white;
+    font-size:28px;
+    padding:15px 17px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
     animation:float 3s ease-in-out infinite;
 }
-
 @keyframes float{
-    0%{transform:translateY(0)}
-    50%{transform:translateY(-10px)}
-    100%{transform:translateY(0)}
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
 }
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width:768px){
-
-    .typewriter{
-        font-size:2rem;
-        border-right:none;
-        white-space:normal;
-        animation:none
-    }
-
-    .hero-section{
-        height:70vh;
-        padding:20px
-    }
-
-    .menu-toggle{display:block}
-
+    .typewriter{font-size:2rem;border-right:none;white-space:normal;animation:none;}
+    .hero-section{height:70vh;padding:20px;}
+    .menu-toggle{display:block;}
     .nav-links{
         position:absolute;
         top:60px;
@@ -183,14 +171,10 @@ footer{
         background:#1a1a1a;
         display:none;
         flex-direction:column;
-        text-align:center
+        text-align:center;
     }
-    .nav-links a{
-        margin:0;
-        padding:15px;
-        border-top:1px solid rgba(255,255,255,.1)
-    }
-    .nav-links.active{display:flex}
+    .nav-links a{margin:0;padding:15px;border-top:1px solid rgba(255,255,255,.1);}
+    .nav-links.active{display:flex;}
 }
 </style>
 </head>
@@ -291,18 +275,30 @@ footer{
         <i class="fas fa-envelope"></i> hello@reliableautos.co.nz
     </p>
 </footer>
-    <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/64123456789" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
-    
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/64123456789" target="_blank" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
 <!-- JS -->
 <script>
+// Menu toggle
 const toggle=document.querySelector('.menu-toggle');
 const nav=document.querySelector('.nav-links');
 toggle.onclick=()=>nav.classList.toggle('active');
+
+// Card scroll animation
+const cards=document.querySelectorAll('.card');
+const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+},{threshold:0.2});
+cards.forEach(card=>observer.observe(card));
 </script>
 
 </body>
 </html>
-
-
-
