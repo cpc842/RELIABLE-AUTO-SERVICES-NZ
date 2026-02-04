@@ -132,21 +132,37 @@ footer{
     text-align:center;
     padding:40px 20px
 }
-/* ===== WHATSAPP BUTTON ===== */
+/* ===== WHATSAPP BUTTON + ANIMATION ===== */
 .whatsapp-btn{
     position:fixed;
     bottom:20px;
     right:20px;
-    background:#25D366;
-    color:white;
-    font-size:1.5rem;
-    padding:15px;
-    border-radius:50%;
-    box-shadow:0 4px 12px rgba(0,0,0,.3);
     z-index:1000;
-    transition:transform .3s;
+    animation:float 3s ease-in-out infinite;
 }
-.whatsapp-btn:hover{transform:scale(1.1)}
+
+.whatsapp-btn img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    box-shadow:0 0 0 rgba(37,211,102,0.7);
+    animation:pulse 2s infinite;
+}
+
+/* Float up-down */
+@keyframes float{
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+    100%{transform:translateY(0)}
+}
+
+/* Pulse glow */
+@keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7)}
+    70%{box-shadow:0 0 0 20px rgba(37,211,102,0)}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+}
+
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width:768px){
@@ -293,4 +309,5 @@ toggle.onclick=()=>nav.classList.toggle('active');
 
 </body>
 </html>
+
 
