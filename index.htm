@@ -160,9 +160,28 @@ footer{
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width:768px){
-    .typewriter{font-size:2rem;border-right:none;white-space:normal;animation:none;}
-    .hero-section{height:70vh;padding:20px;}
-    .menu-toggle{display:block;}
+
+    .typewriter{
+        font-size:2rem;
+        border-right:none;
+        white-space:normal;
+        animation:none;
+    }
+
+    .hero-section{
+        height:70vh;
+        padding:20px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    /* ✅ MOBILE LOGO SIZE */
+    .nav-brand img{
+        height:40px;   /* desktop 65px → mobile 40px */
+    }
+
     .nav-links{
         position:absolute;
         top:60px;
@@ -172,7 +191,9 @@ footer{
         display:none;
         flex-direction:column;
         text-align:center;
-    }
+    
+}
+
     .nav-links a{margin:0;padding:15px;border-top:1px solid rgba(255,255,255,.1);}
     .nav-links.active{display:flex;}
 }
@@ -302,6 +323,7 @@ cards.forEach(card=>observer.observe(card));
 
 </body>
 </html>
+
 
 
 
