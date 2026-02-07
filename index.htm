@@ -5,12 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reliable Auto Services NZ</title>
 
-<!-- Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- ===============================
+     Fonts & Icons
+     Google Fonts: Inter සහ Montserrat
+     Font Awesome icons සඳහා
+================================= -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-/* ===== GLOBAL ===== */
+/* ===============================
+   GLOBAL STYLES
+   සියලු element වල box-sizing, body background, font, color, line height, smooth scroll
+================================= */
 *{box-sizing:border-box;}
 body{
     margin:0;
@@ -22,32 +29,40 @@ body{
     scroll-behavior:smooth;
 }
 
-/* ===== TYPEWRITER ===== */
+/* ===============================
+   TYPEWRITER (Hero Section Headline)
+   Text එක step by step පෙන්වීම සහ cursor blink
+================================= */
 .typewriter{
-    font-size:3rem;
-    color:white;
-    text-shadow:2px 2px 4px rgba(0,0,0,.7);
-    overflow:hidden;
-    border-right:3px solid #00c3ff;
-    white-space:nowrap;
+    font-size:3rem; /* අකුරු විශාලත්වය */
+    color:white; /* අකුරු වර්ණය */
+    text-shadow:2px 2px 4px rgba(0,0,0,.7); /* text shadow effect */
+    overflow:hidden; /* overflow hide */
+    border-right:3px solid #00c3ff; /* cursor line */
+    white-space:nowrap; /* single line */
     margin:auto;
-    animation:typing 3s steps(30,end),blink .75s step-end infinite;
+    animation:typing 3s steps(30,end),blink .75s step-end infinite; /* typing + blink animation */
 }
 @keyframes typing{from{width:0}to{width:100%}}
 @keyframes blink{50%{border-color:#00c3ff}}
 
-/* ===== NAVBAR ===== */
+/* ===============================
+   NAVBAR
+   Sticky top, background gradient, shadow
+   Nav brand: logo + site name
+   Nav links: menu items
+================================= */
 .navigation-section{
-    background:linear-gradient(135deg,#1a1a1a,#2d2d2d);
-    position:sticky;
-    top:0;
-    z-index:100;
-    box-shadow:0 4px 20px rgba(0,0,0,.1);
+    background:linear-gradient(135deg,#1a1a1a,#2d2d2d); /* background gradient */
+    position:sticky; /* sticky top */
+    top:0; 
+    z-index:100; /* overlay priority */
+    box-shadow:0 4px 20px rgba(0,0,0,.1); /* shadow effect */
 }
 .nav-container{
-    max-width:1100px;
-    margin:auto;
-    padding:10px 20px;
+    max-width:1100px; /* container width */
+    margin:auto; 
+    padding:10px 20px; /* spacing */
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -57,30 +72,41 @@ body{
     align-items:center;
     color:white;
     font-weight:700;
-    font-size:1rem;
+    font-size:1.8rem; /* Logo name larger */
+    font-family:'Montserrat',sans-serif;
 }
-.nav-brand img{height:60px;width:auto;margin-right:5px;}
-.nav-brand span{color:#00c3ff;}
+.nav-brand img{
+    height:60px; /* logo height */
+    width:auto; 
+    margin-right:10px; /* spacing between logo and text */
+}
+.nav-brand span{
+    color:#00c3ff; /* site name color */
+}
 .nav-links a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
+    color:white; /* link color */
+    text-decoration:none; 
+    margin-left:20px; /* spacing between links */
     font-weight:500;
 }
-.nav-links a:hover{color:#00c3ff;}
+.nav-links a:hover{color:#00c3ff;} /* hover color */
 .menu-toggle{
-    display:none;
-    font-size:1.6rem;
+    display:none; /* hide toggle on desktop */
+    font-size:1.6rem; /* icon size */
     color:white;
     cursor:pointer;
 }
 
-/* ===== HERO ===== */
+/* ===============================
+   HERO SECTION
+   Background image + overlay gradient
+   Centered headline + text + button
+================================= */
 .hero-section {
     background:
-    linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
-    url("hero.png") center/cover;
-    height: 500px;
+    linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), /* overlay gradient */
+    url("hero.png") center/cover; /* hero image */
+    height: 500px; /* hero height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,17 +114,28 @@ body{
     color: white;
 }
 
-/* ===== ABOUT ===== */
-#about{padding:80px 20px;background:#f9fbfd;}
+/* ===============================
+   ABOUT SECTION
+   Company info + 3 features grid
+================================= */
+#about{
+    padding:80px 20px; /* spacing */
+    background:#f9fbfd; /* light background */
+}
 .about-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); /* responsive grid */
+    gap:30px; /* spacing */
     margin-top:40px;
 }
 
-/* ===== SERVICES ===== */
-#services{padding:80px 20px;}
+/* ===============================
+   SERVICES SECTION
+   Service cards with hover and scroll animation
+================================= */
+#services{
+    padding:80px 20px;
+}
 .services-grid{
     max-width:1200px;
     margin:auto;
@@ -109,79 +146,80 @@ body{
 .card{
     background:white;
     padding:30px;
-    border-radius:15px;
+    border-radius:15px; /* round corners */
     text-align:center;
     box-shadow:0 5px 15px rgba(0,0,0,.1);
     transition:.3s;
-    opacity:0;
+    opacity:0; /* initially hidden */
     transform:translateY(40px);
 }
 .card.show{
     opacity:1;
     transform:translateY(0);
 }
-
-/* Hover animation */
 .card:hover{
     transform:translateY(-10px);
     box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
-/* ===== FOOTER ===== */
+/* ===============================
+   FOOTER
+   Background dark, text centered
+================================= */
 footer{
-    background:#1a1a1a;
-    color:white;
+    background:#1a1a1a; /* dark background */
+    color:white; 
     text-align:center;
-    padding:40px 20px;
+    padding:40px 20px; /* spacing */
 }
 
-/* ===== WHATSAPP BUTTON ===== */
+/* ===============================
+   WHATSAPP BUTTON
+   Fixed bottom-right with float animation
+================================= */
 .whatsapp-btn{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    z-index:9999;
-    background:#25D366;
-    color:white;
-    font-size:28px;
-    padding:15px 17px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    animation:float 3s ease-in-out infinite;
+    position:fixed; /* page එකේ fixed position */
+    bottom:20px; /* bottom margin */
+    right:20px; /* right margin */
+    z-index:9999; /* overlay priority */
+    background:#25D366; /* WhatsApp green */
+    color:white; /* icon color */
+    font-size:28px; /* icon size */
+    padding:15px 17px; /* button padding */
+    border-radius:50%; /* circle shape */
+    display:flex; /* flex container */
+    align-items:center; /* center icon vertically */
+    justify-content:center; /* center icon horizontally */
+    text-decoration:none; /* remove underline */
+    animation:float 3s ease-in-out infinite; /* floating animation */
 }
 @keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0);}
+    0%{transform:translateY(0);} /* start position */
+    50%{transform:translateY(-10px);} /* move up */
+    100%{transform:translateY(0);} /* return */
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
+/* ===============================
+   MOBILE RESPONSIVE
+   Smaller font, mobile navbar toggle
+================================= */
 @media (max-width:768px){
-
     .typewriter{
-        font-size:2rem;
+        font-size:2rem; 
         border-right:none;
         white-space:normal;
         animation:none;
     }
-
     .hero-section{
         height:70vh;
         padding:20px;
     }
-
     .menu-toggle{
-        display:block;
+        display:block; 
     }
-
-    /* ✅ MOBILE LOGO SIZE */
     .nav-brand img{
-        height:40px;   /* desktop 65px → mobile 40px */
+        height:40px; 
     }
-
     .nav-links{
         position:absolute;
         top:60px;
@@ -191,10 +229,12 @@ footer{
         display:none;
         flex-direction:column;
         text-align:center;
-    
-}
-
-    .nav-links a{margin:0;padding:15px;border-top:1px solid rgba(255,255,255,.1);}
+    }
+    .nav-links a{
+        margin:0;
+        padding:15px;
+        border-top:1px solid rgba(255,255,255,.1);
+    }
     .nav-links.active{display:flex;}
 }
 </style>
@@ -209,9 +249,7 @@ footer{
             <img src="logo.png" alt="Logo">
             <span>RELIABLE AUTO SERVICES NZ</span>
         </div>
-
         <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -221,7 +259,7 @@ footer{
     </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section id="home" class="hero-section">
     <div>
         <h1 class="typewriter">Drive the Future Today</h1>
@@ -232,14 +270,11 @@ footer{
     </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT SECTION -->
 <section id="about">
     <div style="max-width:900px;margin:auto;text-align:center">
         <h2 style="font-size:2.5rem">About Reliable Auto Services NZ</h2>
-        <p>
-            Based in <strong>Auckland, New Zealand</strong>, we’ve proudly served Kiwi drivers since 2015.
-        </p>
-
+        <p>Based in <strong>Auckland, New Zealand</strong>, we’ve proudly served Kiwi drivers since 2015.</p>
         <div class="about-grid">
             <div>
                 <i class="fas fa-wrench" style="font-size:2.5rem;color:#00c3ff"></i>
@@ -260,7 +295,7 @@ footer{
     </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES SECTION -->
 <section id="services">
     <h2 style="text-align:center;font-size:2.5rem">Our Services</h2>
     <div class="services-grid">
@@ -297,19 +332,19 @@ footer{
     </p>
 </footer>
 
-<!-- WhatsApp Button -->
+<!-- WHATSAPP BUTTON -->
 <a href="https://wa.me/64123456789" target="_blank" class="whatsapp-btn">
     <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- JS -->
+<!-- JAVASCRIPT -->
 <script>
-// Menu toggle
+// Mobile menu toggle
 const toggle=document.querySelector('.menu-toggle');
 const nav=document.querySelector('.nav-links');
 toggle.onclick=()=>nav.classList.toggle('active');
 
-// Card scroll animation
+// Service cards scroll animation
 const cards=document.querySelectorAll('.card');
 const observer=new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
@@ -323,11 +358,3 @@ cards.forEach(card=>observer.observe(card));
 
 </body>
 </html>
-
-
-
-
-
-
-
-
