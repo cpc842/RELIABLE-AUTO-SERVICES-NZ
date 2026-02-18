@@ -7,9 +7,8 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    
 <style>
-/* ================= THEME VARIABLES - WHITE & RED  ================= */
+/* ================= THEME VARIABLES - WHITE & RED ================= */
 :root{
     --primary:#d32f2f;
     --primary-dark:#b71c1c;
@@ -42,7 +41,7 @@ body{
 /* ================= HEADER ================= */
 header{
     background:var(--white);
-    padding:15px 40px;
+    padding:12px 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -57,37 +56,49 @@ header{
 .header-left{
     display:flex;
     align-items:center;
-    gap:20px;
+    gap:15px;
 }
 header img{
-    height:70px;
+    height:50px;
     filter:drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:1.5rem;
+    color:var(--primary);
+    cursor:pointer;
+    padding:8px;
+    z-index:1001;
 }
 
 /* CONTACT IN HEADER - RIGHT SIDE */
 .header-contact{
     display:flex;
     align-items:center;
-    gap:25px;
+    gap:20px;
     animation:fadeInLeft 1s ease-out 0.5s both;
 }
 .contact-info-item{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:8px;
     color:var(--text);
-    font-size:0.9rem;
+    font-size:0.85rem;
 }
 .contact-info-item i{
-    width:35px;
-    height:35px;
+    width:32px;
+    height:32px;
     background:var(--primary-light);
     color:var(--primary);
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:0.9rem;
+    font-size:0.85rem;
     transition:all 0.3s;
 }
 .contact-info-item:hover i{
@@ -107,16 +118,16 @@ header img{
 .contact-info-item div{
     display:flex;
     flex-direction:column;
-    line-height:1.3;
+    line-height:1.2;
 }
 .contact-info-item small{
-    font-size:0.75rem;
+    font-size:0.7rem;
     color:var(--text-light);
     text-transform:uppercase;
     letter-spacing:0.5px;
 }
 .contact-info-item strong{
-    font-size:0.95rem;
+    font-size:0.9rem;
     color:var(--text);
 }
 
@@ -124,22 +135,22 @@ header img{
 .location-item-header{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:8px;
     color:var(--text);
-    font-size:0.9rem;
+    font-size:0.85rem;
     cursor:pointer;
     transition:all 0.3s;
 }
 .location-item-header i{
-    width:35px;
-    height:35px;
+    width:32px;
+    height:32px;
     background:var(--primary-light);
     color:var(--primary);
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:0.9rem;
+    font-size:0.85rem;
     transition:all 0.3s;
 }
 .location-item-header:hover i{
@@ -150,16 +161,16 @@ header img{
 .location-item-header div{
     display:flex;
     flex-direction:column;
-    line-height:1.3;
+    line-height:1.2;
 }
 .location-item-header small{
-    font-size:0.75rem;
+    font-size:0.7rem;
     color:var(--text-light);
     text-transform:uppercase;
     letter-spacing:0.5px;
 }
 .location-item-header strong{
-    font-size:0.95rem;
+    font-size:0.9rem;
     color:var(--text);
     transition:color 0.3s;
 }
@@ -167,22 +178,41 @@ header img{
     color:var(--primary);
 }
 
+/* Mobile Contact Button */
+.mobile-contact-btn{
+    display:none;
+    background:var(--primary);
+    color:var(--white);
+    padding:10px 18px;
+    border-radius:20px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.85rem;
+    align-items:center;
+    gap:6px;
+}
+
 /* ================= NAVIGATION ================= */
 nav{
     background:var(--white);
-    margin-top:100px;
+    margin-top:80px;
     position:sticky;
-    top:100px;
+    top:80px;
     z-index:999;
     box-shadow:0 2px 10px rgba(0,0,0,0.08);
     border-bottom:1px solid var(--primary-light);
     animation:slideDown 0.8s ease-out 0.2s both;
 }
+.nav-container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 20px;
+}
 nav ul{
     display:flex;
     list-style:none;
     justify-content:center;
-    gap:30px;
+    gap:40px;
     padding:15px 0;
 }
 nav ul li{
@@ -198,7 +228,7 @@ nav ul li a{
     color:var(--text);
     text-decoration:none;
     font-weight:600;
-    font-size:0.9rem;
+    font-size:0.95rem;
     transition:all 0.3s;
     position:relative;
     padding:8px 0;
@@ -221,13 +251,53 @@ nav ul li a:hover::after{
 }
 nav ul li a:hover{
     color:var(--primary);
-    transform:translateY(-2px);
+}
+
+/* Mobile Nav */
+.mobile-nav{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:var(--white);
+    z-index:999;
+    padding-top:80px;
+    transform:translateX(-100%);
+    transition:transform 0.3s ease;
+}
+.mobile-nav.active{
+    transform:translateX(0);
+}
+.mobile-nav ul{
+    display:flex;
+    flex-direction:column;
+    list-style:none;
+    padding:20px;
+    gap:0;
+}
+.mobile-nav ul li{
+    border-bottom:1px solid var(--gray-light);
+}
+.mobile-nav ul li a{
+    display:block;
+    padding:20px;
+    color:var(--text);
+    text-decoration:none;
+    font-size:1.2rem;
+    font-weight:600;
+    text-transform:uppercase;
+}
+.mobile-nav ul li a:hover{
+    background:var(--primary-light);
+    color:var(--primary);
 }
 
 /* ================= HERO SLIDER ================= */
 .hero-slider{
     position:relative;
-    height:550px;
+    height:500px;
     margin-top:0;
     overflow:hidden;
 }
@@ -244,7 +314,7 @@ nav ul li a:hover{
     align-items:center;
     text-align:center;
     color:var(--white);
-    padding:0 20px;
+    padding:20px;
 }
 .hero-slide.active{
     opacity:1;
@@ -258,9 +328,11 @@ nav ul li a:hover{
 .hero-slide > div{
     position:relative;
     z-index:1;
+    max-width:800px;
+    padding:0 20px;
 }
 .hero-slide h2{
-    font-size:3.2rem;
+    font-size:2.8rem;
     margin-bottom:20px;
     font-weight:700;
     line-height:1.2;
@@ -270,21 +342,18 @@ nav ul li a:hover{
     color:var(--primary-light);
 }
 .hero-slide p{
-    font-size:1.3rem;
+    font-size:1.2rem;
     margin-bottom:30px;
-    max-width:600px;
-    margin-left:auto;
-    margin-right:auto;
     text-shadow:1px 1px 2px rgba(0,0,0,0.5);
 }
 .hero-slide a{
     background:var(--primary);
-    padding:15px 35px;
+    padding:14px 32px;
     color:var(--white);
     border-radius:30px;
     text-decoration:none;
     font-weight:600;
-    font-size:1.1rem;
+    font-size:1rem;
     display:inline-block;
     transition:all 0.3s;
     box-shadow:var(--shadow);
@@ -300,7 +369,7 @@ nav ul li a:hover{
 /* Slider dots */
 .slider-dots{
     position:absolute;
-    bottom:30px;
+    bottom:25px;
     left:50%;
     transform:translateX(-50%);
     display:flex;
@@ -320,15 +389,15 @@ nav ul li a:hover{
     transform:scale(1.2);
 }
 
-/* ================= SERVICES SECTION - NEW LAYOUT ================= */
+/* ================= SERVICES SECTION ================= */
 .services-section{
-    padding:80px 20px;
+    padding:60px 20px;
     background:var(--off-white);
 }
 .services-section h2{
     text-align:center;
-    font-size:2.5rem;
-    margin-bottom:50px;
+    font-size:2.2rem;
+    margin-bottom:40px;
     color:var(--text);
     position:relative;
     display:inline-block;
@@ -341,7 +410,7 @@ nav ul li a:hover{
     bottom:-10px;
     left:50%;
     transform:translateX(-50%);
-    width:80px;
+    width:60px;
     height:4px;
     background:var(--primary);
     border-radius:2px;
@@ -350,14 +419,14 @@ nav ul li a:hover{
 /* Featured Services - 3 Cards */
 .featured-services{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
     max-width:1200px;
-    margin:0 auto 60px;
+    margin:0 auto 50px;
 }
 .service-card{
     background:var(--white);
-    border-radius:0;
+    border-radius:12px;
     overflow:hidden;
     box-shadow:0 4px 15px rgba(0,0,0,0.1);
     transition:all 0.4s ease;
@@ -374,7 +443,7 @@ nav ul li a:hover{
 }
 .service-image{
     width:100%;
-    height:220px;
+    height:200px;
     overflow:hidden;
 }
 .service-image img{
@@ -387,13 +456,13 @@ nav ul li a:hover{
     transform:scale(1.1);
 }
 .service-content{
-    padding:25px;
+    padding:20px;
 }
 .service-content h3{
-    font-size:1.1rem;
+    font-size:1rem;
     font-weight:700;
     color:var(--text);
-    margin-bottom:15px;
+    margin-bottom:12px;
     text-transform:uppercase;
     letter-spacing:0.5px;
 }
@@ -402,19 +471,19 @@ nav ul li a:hover{
 }
 .service-content p{
     color:var(--text-light);
-    font-size:0.95rem;
-    line-height:1.7;
-    margin-bottom:20px;
+    font-size:0.9rem;
+    line-height:1.6;
+    margin-bottom:15px;
 }
 .read-more-btn{
     display:inline-block;
-    padding:10px 25px;
+    padding:10px 22px;
     background:var(--navy);
     color:var(--white);
     text-decoration:none;
     font-size:0.85rem;
     font-weight:600;
-    border-radius:4px;
+    border-radius:6px;
     transition:all 0.3s;
     border:none;
     cursor:pointer;
@@ -424,12 +493,12 @@ nav ul li a:hover{
     transform:translateX(5px);
 }
 
-/* Detailed Service View (Screenshot style) */
+/* Detailed Service View */
 .detailed-service-view{
     display:none;
     max-width:1200px;
     margin:0 auto;
-    gap:40px;
+    gap:30px;
     animation:fadeIn 0.5s ease;
 }
 .detailed-service-view.active{
@@ -445,8 +514,9 @@ nav ul li a:hover{
 }
 .service-detail-image{
     width:100%;
-    height:400px;
+    height:350px;
     overflow:hidden;
+    border-radius:12px;
     margin-bottom:20px;
 }
 .service-detail-image img{
@@ -461,7 +531,10 @@ nav ul li a:hover{
     margin-bottom:20px;
 }
 .did-you-know{
-    margin-top:30px;
+    margin-top:25px;
+    background:var(--primary-light);
+    padding:20px;
+    border-radius:12px;
 }
 .did-you-know h4{
     color:var(--text);
@@ -484,12 +557,12 @@ nav ul li a:hover{
 }
 
 .service-detail-right{
-    width:350px;
+    width:320px;
 }
 .services-list-box h3{
-    font-size:1.2rem;
+    font-size:1.1rem;
     color:var(--text);
-    margin-bottom:20px;
+    margin-bottom:15px;
     padding-bottom:10px;
     border-bottom:3px solid var(--primary);
     display:inline-block;
@@ -498,44 +571,37 @@ nav ul li a:hover{
     list-style:none;
 }
 .service-list li{
-    margin-bottom:8px;
+    margin-bottom:6px;
 }
 .service-list a{
     display:block;
-    padding:12px 15px;
+    padding:12px;
     background:var(--navy);
     color:var(--white);
     text-decoration:none;
-    font-size:0.9rem;
+    font-size:0.85rem;
     transition:all 0.3s;
     position:relative;
+    border-radius:6px;
 }
 .service-list a:hover,
 .service-list a.active{
     background:var(--primary);
-    padding-left:25px;
-}
-.service-list a.active::before{
-    content:'';
-    position:absolute;
-    left:0;
-    top:0;
-    bottom:0;
-    width:5px;
-    background:var(--white);
+    padding-left:20px;
 }
 
 /* Quick Contact Form */
 .quick-contact{
-    margin-top:30px;
-    padding:25px;
+    margin-top:25px;
+    padding:20px;
     background:var(--white);
     box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    border-radius:12px;
 }
 .quick-contact h3{
-    font-size:1.2rem;
+    font-size:1.1rem;
     color:var(--text);
-    margin-bottom:20px;
+    margin-bottom:15px;
     padding-bottom:10px;
     border-bottom:3px solid var(--primary);
     display:inline-block;
@@ -544,9 +610,9 @@ nav ul li a:hover{
 .quick-contact textarea{
     width:100%;
     padding:12px;
-    margin-bottom:15px;
+    margin-bottom:12px;
     border:1px solid var(--gray-light);
-    border-radius:4px;
+    border-radius:8px;
     font-family:inherit;
     font-size:0.9rem;
 }
@@ -557,14 +623,15 @@ nav ul li a:hover{
 }
 .quick-contact button{
     width:100%;
-    padding:12px;
+    padding:14px;
     background:var(--navy);
     color:var(--white);
     border:none;
-    border-radius:4px;
+    border-radius:8px;
     font-weight:600;
     cursor:pointer;
     transition:all 0.3s;
+    font-size:1rem;
 }
 .quick-contact button:hover{
     background:var(--primary);
@@ -573,13 +640,14 @@ nav ul li a:hover{
 /* Back button */
 .back-to-services{
     display:inline-block;
-    margin-bottom:30px;
+    margin-bottom:20px;
     padding:10px 20px;
     background:var(--gray-light);
     color:var(--text);
     text-decoration:none;
-    border-radius:4px;
+    border-radius:8px;
     transition:all 0.3s;
+    font-weight:500;
 }
 .back-to-services:hover{
     background:var(--primary);
@@ -588,10 +656,10 @@ nav ul li a:hover{
 
 /* ================= ABOUT ================= */
 #about{
-    padding:100px 20px;
+    padding:80px 20px;
     text-align:center;
     background:linear-gradient(135deg,var(--white) 0%,var(--primary-light) 100%);
-    margin:40px 20px;
+    margin:30px 20px;
     border-radius:20px;
     position:relative;
     overflow:hidden;
@@ -607,13 +675,13 @@ nav ul li a:hover{
     content:'';
     position:absolute;
     top:-50%;right:-10%;
-    width:400px;height:400px;
+    width:300px;height:300px;
     background:var(--primary);
     opacity:0.05;
     border-radius:50%;
 }
 #about h2{
-    font-size:2.5rem;
+    font-size:2rem;
     margin-bottom:15px;
     color:var(--text);
     position:relative;
@@ -625,16 +693,16 @@ nav ul li a:hover{
     bottom:-10px;
     left:50%;
     transform:translateX(-50%);
-    width:80px;
+    width:60px;
     height:4px;
     background:var(--primary);
     border-radius:2px;
 }
 #about p{
-    max-width:800px;
-    margin:30px auto 0;
-    font-size:1.15rem;
-    line-height:1.9;
+    max-width:700px;
+    margin:25px auto 0;
+    font-size:1.05rem;
+    line-height:1.8;
     color:var(--text);
     position:relative;
     z-index:1;
@@ -646,9 +714,9 @@ nav ul li a:hover{
 
 /* ================= LOCATION SECTION ================= */
 .location-section{
-    padding:80px 20px;
+    padding:60px 20px;
     background:var(--white);
-    margin:40px 20px;
+    margin:30px 20px;
     border-radius:20px;
     box-shadow:0 4px 20px rgba(0,0,0,0.05);
     opacity:0;
@@ -661,8 +729,8 @@ nav ul li a:hover{
 }
 .location-section h2{
     text-align:center;
-    font-size:2.5rem;
-    margin-bottom:40px;
+    font-size:2rem;
+    margin-bottom:30px;
     color:var(--text);
     position:relative;
     display:inline-block;
@@ -676,17 +744,17 @@ nav ul li a:hover{
     bottom:-10px;
     left:50%;
     transform:translateX(-50%);
-    width:80px;
+    width:60px;
     height:4px;
     background:var(--primary);
     border-radius:2px;
 }
 
-/* NEW LOCATION LAYOUT */
+/* Location Layout */
 .location-content{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:40px;
+    gap:30px;
     max-width:1200px;
     margin:0 auto;
     align-items:start;
@@ -696,7 +764,7 @@ nav ul li a:hover{
 .location-left{
     display:flex;
     flex-direction:column;
-    gap:30px;
+    gap:25px;
 }
 
 .map-container{
@@ -707,21 +775,21 @@ nav ul li a:hover{
 }
 .map-container iframe{
     width:100%;
-    height:400px;
+    height:350px;
     border:none;
     display:block;
 }
 
 .contact-details-box{
     background:var(--off-white);
-    padding:30px;
+    padding:25px;
     border-radius:16px;
     border:2px solid var(--primary-light);
 }
 .contact-details-box h3{
-    font-size:1.3rem;
+    font-size:1.2rem;
     color:var(--text);
-    margin-bottom:20px;
+    margin-bottom:15px;
     padding-bottom:10px;
     border-bottom:3px solid var(--primary);
     display:inline-block;
@@ -730,25 +798,26 @@ nav ul li a:hover{
     list-style:none;
     display:flex;
     flex-direction:column;
-    gap:15px;
+    gap:12px;
 }
 .contact-list li{
     display:flex;
     align-items:center;
-    gap:15px;
-    font-size:1rem;
+    gap:12px;
+    font-size:0.95rem;
     color:var(--text);
 }
 .contact-list li i{
-    width:40px;
-    height:40px;
+    width:36px;
+    height:36px;
     background:var(--primary-light);
     color:var(--primary);
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:1rem;
+    font-size:0.9rem;
+    flex-shrink:0;
 }
 .contact-list li a{
     color:var(--primary);
@@ -762,9 +831,9 @@ nav ul li a:hover{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    gap:10px;
-    margin-top:20px;
-    padding:12px 30px;
+    gap:8px;
+    margin-top:15px;
+    padding:12px 25px;
     background:var(--primary);
     color:var(--white);
     text-decoration:none;
@@ -775,6 +844,7 @@ nav ul li a:hover{
     border:none;
     cursor:pointer;
     width:100%;
+    font-size:1rem;
 }
 .directions-btn:hover{
     transform:translateY(-3px);
@@ -794,35 +864,35 @@ nav ul li a:hover{
     overflow:hidden;
     box-shadow:var(--shadow);
     color:var(--white);
-    padding:35px;
+    padding:30px;
 }
 .working-hours-box h3{
-    font-size:1.4rem;
-    margin-bottom:25px;
+    font-size:1.3rem;
+    margin-bottom:20px;
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:10px;
     color:var(--white);
     border-bottom:2px solid var(--primary);
-    padding-bottom:15px;
+    padding-bottom:12px;
 }
 .working-hours-box h3 i{
     color:var(--primary);
-    font-size:1.3rem;
+    font-size:1.2rem;
 }
 .hours-list{
     list-style:none;
     display:flex;
     flex-direction:column;
-    gap:12px;
+    gap:10px;
 }
 .hours-list li{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:12px 0;
+    padding:10px 0;
     border-bottom:1px dashed rgba(255,255,255,0.2);
-    font-size:1rem;
+    font-size:0.95rem;
 }
 .hours-list li:last-child{
     border-bottom:none;
@@ -845,7 +915,7 @@ footer{
     background:var(--text);
     color:var(--white);
     text-align:center;
-    padding:50px 20px;
+    padding:40px 20px;
     position:relative;
     overflow:hidden;
 }
@@ -856,12 +926,12 @@ footer::before{
     background:linear-gradient(90deg,var(--primary),var(--accent));
 }
 footer p{
-    margin:10px 0;
+    margin:8px 0;
     position:relative;
     z-index:1;
     opacity:0;
     animation:fadeInUp 0.8s ease-out forwards;
-    font-size:1rem;
+    font-size:0.9rem;
 }
 footer p:nth-child(1){animation-delay:0.2s;}
 footer p:nth-child(2){animation-delay:0.4s;}
@@ -896,23 +966,27 @@ footer p:nth-child(3){animation-delay:0.6s;}
     background:var(--primary-dark);
 }
 
-/* ================= MEDIA ================= */
-@media(max-width:1200px){
+/* ================= MOBILE RESPONSIVE ================= */
+@media(max-width:992px){
     .header-contact{
         display:none;
     }
     .mobile-contact-btn{
-        display:block;
-        background:var(--primary);
-        color:var(--white);
-        padding:10px 20px;
-        border-radius:20px;
-        text-decoration:none;
-        font-weight:600;
-        font-size:0.9rem;
+        display:flex;
     }
-    .location-item-header{
-        margin-right:0;
+    .mobile-menu-toggle{
+        display:block;
+    }
+    nav{
+        display:none;
+    }
+    .mobile-nav{
+        display:block;
+    }
+    
+    .featured-services{
+        grid-template-columns:1fr;
+        max-width:500px;
     }
     
     .detailed-service-view.active{
@@ -921,57 +995,185 @@ footer p:nth-child(3){animation-delay:0.6s;}
     .service-detail-right{
         width:100%;
     }
-}
-
-@media(max-width:768px){
-    header{padding:15px 20px;}
-    .header-left{gap:15px;}
-    header img{height:50px;}
+    .service-detail-image{
+        height:250px;
+    }
     
-    nav{margin-top:85px;top:0;}
-    nav ul{flex-direction:column; gap:12px;padding:20px 0;}
-    
-    .hero-slider{height:400px;}
-    .hero-slide h2{font-size:2rem;}
-    .hero-slide p{font-size:1rem;}
-    
-    .featured-services{grid-template-columns:1fr;}
-    .service-image{height:180px;}
-    
-    .service-detail-image{height:250px;}
-    
-    #about{margin:20px;padding:60px 15px;}
-    #about h2{font-size:2rem;}
-    
-    /* Location Section Mobile */
     .location-content{
         grid-template-columns:1fr;
     }
-    .map-container iframe{height:300px;}
-    .working-hours-box{padding:25px;}
-    .hours-list li{font-size:0.9rem;}
+}
+
+@media(max-width:768px){
+    header{
+        padding:10px 15px;
+    }
+    header img{
+        height:40px;
+    }
+    .header-left{
+        gap:10px;
+    }
     
-    .location-section{margin:20px;padding:60px 15px;}
-    .location-section h2{font-size:2rem;}
+    .mobile-contact-btn{
+        padding:8px 14px;
+        font-size:0.8rem;
+    }
+    
+    .hero-slider{
+        height:400px;
+    }
+    .hero-slide h2{
+        font-size:1.8rem;
+        margin-bottom:15px;
+    }
+    .hero-slide p{
+        font-size:1rem;
+        margin-bottom:20px;
+    }
+    .hero-slide a{
+        padding:12px 28px;
+        font-size:0.95rem;
+    }
+    
+    .services-section{
+        padding:40px 15px;
+    }
+    .services-section h2{
+        font-size:1.6rem;
+        margin-bottom:30px;
+    }
+    
+    .service-image{
+        height:180px;
+    }
+    .service-content{
+        padding:18px;
+    }
+    .service-content h3{
+        font-size:0.95rem;
+    }
+    .service-content p{
+        font-size:0.85rem;
+    }
+    
+    #about{
+        margin:20px 15px;
+        padding:50px 15px;
+    }
+    #about h2{
+        font-size:1.5rem;
+    }
+    #about p{
+        font-size:0.95rem;
+    }
+    
+    .location-section{
+        margin:20px 15px;
+        padding:40px 15px;
+    }
+    .location-section h2{
+        font-size:1.5rem;
+        margin-bottom:25px;
+    }
+    
+    .map-container iframe{
+        height:250px;
+    }
+    
+    .contact-details-box{
+        padding:20px;
+    }
+    .contact-list li{
+        font-size:0.9rem;
+    }
+    
+    .working-hours-box{
+        padding:25px;
+    }
+    .working-hours-box h3{
+        font-size:1.1rem;
+    }
+    .hours-list li{
+        font-size:0.9rem;
+        padding:8px 0;
+    }
+    
+    .directions-btn{
+        padding:14px;
+        font-size:1rem;
+    }
+    
+    footer{
+        padding:30px 15px;
+    }
+    footer p{
+        font-size:0.85rem;
+    }
+}
+
+@media(max-width:480px){
+    .hero-slider{
+        height:350px;
+    }
+    .hero-slide h2{
+        font-size:1.5rem;
+    }
+    .hero-slide p{
+        font-size:0.9rem;
+    }
+    
+    .slider-dot{
+        width:10px;
+        height:10px;
+    }
+    
+    .service-image{
+        height:160px;
+    }
+    
+    .map-container iframe{
+        height:200px;
+    }
+    
+    .contact-list li i{
+        width:32px;
+        height:32px;
+        font-size:0.8rem;
+    }
+    
+    .working-hours-box{
+        padding:20px;
+    }
+    .hours-list li{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:5px;
+    }
+    .hours-list li .day{
+        font-size:0.9rem;
+    }
+    .hours-list li .time{
+        font-size:0.85rem;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER - LOGO LEFT, LOCATION + CONTACT RIGHT -->
+<!-- HEADER -->
 <header>
     <div class="header-left">
         <img src="logo.png" alt="Reliable Auto Services Logo">
     </div>
     
-    <div style="display:flex;align-items:center;gap:15px;">
-        <!-- LOCATION - SAME STYLE AS CONTACT -->
+    <div style="display:flex;align-items:center;gap:10px;">
         <div class="location-item-header" onclick="document.getElementById('location').scrollIntoView({behavior:'smooth'})">
             <i class="fas fa-map-marker-alt"></i>
             <div>
                 <small>Location</small>
-                <strong>Auckland, NZ</strong>
+                <strong>Auckland</strong>
             </div>
         </div>
         
@@ -987,38 +1189,45 @@ footer p:nth-child(3){animation-delay:0.6s;}
                 <i class="fas fa-envelope"></i>
                 <div>
                     <small>Email</small>
-                    <a href="mailto:info@reliableautoservices.co.nz"><strong>info@reliableautoservices.co.nz</strong></a>
-                </div>
-            </div>
-            <div class="contact-info-item">
-                <i class="fas fa-clock"></i>
-                <div>
-                    <small>Open Hours</small>
-                    <strong>Mon-Fri: 8AM - 6PM</strong>
+                    <a href="mailto:info@reliableautoservices.co.nz"><strong>Email Us</strong></a>
                 </div>
             </div>
         </div>
         
-        <!-- Mobile only button -->
-        <a href="tel:091234567" class="mobile-contact-btn" style="display:none;">
-            <i class="fas fa-phone"></i> Call Now
+        <a href="tel:091234567" class="mobile-contact-btn">
+            <i class="fas fa-phone"></i> Call
         </a>
+        
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
 </header>
 
-<!-- NAVIGATION -->
-<nav>
+<!-- MOBILE NAVIGATION -->
+<nav class="mobile-nav" id="mobileNav">
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#location">Location</a></li>
+        <li><a href="#home" onclick="toggleMobileMenu()">Home</a></li>
+        <li><a href="#about" onclick="toggleMobileMenu()">About Us</a></li>
+        <li><a href="#services" onclick="toggleMobileMenu()">Services</a></li>
+        <li><a href="#location" onclick="toggleMobileMenu()">Location</a></li>
     </ul>
 </nav>
 
-<!-- HERO SLIDER - 3 BACKGROUNDS -->
+<!-- DESKTOP NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#location">Location</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO SLIDER -->
 <div class="hero-slider" id="home">
-    <!-- Slide 1 -->
     <div class="hero-slide active" style="background:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
         <div>
             <h2>Your One Stop <span>Automotive</span><br>Repair Shop</h2>
@@ -1027,7 +1236,6 @@ footer p:nth-child(3){animation-delay:0.6s;}
         </div>
     </div>
     
-    <!-- Slide 2 -->
     <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
         <div>
             <h2>Professional <span>WOF</span> Inspections</h2>
@@ -1036,7 +1244,6 @@ footer p:nth-child(3){animation-delay:0.6s;}
         </div>
     </div>
     
-    <!-- Slide 3 -->
     <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
         <div>
             <h2>Expert <span>Engine</span> Repairs</h2>
@@ -1045,7 +1252,6 @@ footer p:nth-child(3){animation-delay:0.6s;}
         </div>
     </div>
     
-    <!-- Slider Dots -->
     <div class="slider-dots">
         <div class="slider-dot active" onclick="goToSlide(0)"></div>
         <div class="slider-dot" onclick="goToSlide(1)"></div>
@@ -1057,46 +1263,41 @@ footer p:nth-child(3){animation-delay:0.6s;}
 <section class="services-section" id="services">
     <h2>Our Services</h2>
     
-    <!-- Featured 3 Services (Initial View) -->
     <div class="featured-services" id="featuredServices">
-        <!-- Service 1 -->
         <div class="service-card">
             <div class="service-image">
                 <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="WOF Inspection">
             </div>
             <div class="service-content">
                 <h3>WOF - <span>WARRANT OF FITNESS</span></h3>
-                <p>A warrant of fitness (WoF) is a regular check to ensure that your vehicle meets required safety standards. It's our job to keep your vehicle up to WoF condition at all times.</p>
+                <p>A warrant of fitness (WoF) is a regular check to ensure that your vehicle meets required safety standards.</p>
                 <button class="read-more-btn" onclick="showServiceDetail(0)">Read more</button>
             </div>
         </div>
         
-        <!-- Service 2 -->
         <div class="service-card">
             <div class="service-image">
                 <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Engine Repair">
             </div>
             <div class="service-content">
                 <h3>ENGINE REPAIR & <span>REBUILDING</span></h3>
-                <p>Our trained mechanics are fully qualified to advise, handle minor and major engine repairs, including Engine Rebuilding and Engine Reconditioning with guaranteed quality.</p>
+                <p>Our trained mechanics are fully qualified to handle minor and major engine repairs with guaranteed quality.</p>
                 <button class="read-more-btn" onclick="showServiceDetail(1)">Read more</button>
             </div>
         </div>
         
-        <!-- Service 3 -->
         <div class="service-card">
             <div class="service-image">
                 <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fleet Maintenance">
             </div>
             <div class="service-content">
                 <h3>FLEET <span>MAINTENANCE</span></h3>
-                <p>Processes that are completely focused on professional automotive maintenance and repair conducted with highly efficient speed and delivery of service for your fleet.</p>
+                <p>Professional automotive maintenance conducted with highly efficient speed and delivery for your fleet.</p>
                 <button class="read-more-btn" onclick="showServiceDetail(2)">Read more</button>
             </div>
         </div>
     </div>
     
-    <!-- Detailed Service View (Hidden by default) -->
     <div class="detailed-service-view" id="detailedView">
         <div class="service-detail-left">
             <a href="#" class="back-to-services" onclick="backToServices(); return false;">
@@ -1119,19 +1320,19 @@ footer p:nth-child(3){animation-delay:0.6s;}
                     <li><a href="#" onclick="selectService(0); return false;" id="list-0">WOF - Warrant of Fitness</a></li>
                     <li><a href="#" onclick="selectService(1); return false;" id="list-1">Engine Repair & Rebuilding</a></li>
                     <li><a href="#" onclick="selectService(2); return false;" id="list-2">Brake & Clutch Service</a></li>
-                    <li><a href="#" onclick="selectService(3); return false;" id="list-3">Radiator Repairs & Cooling System Service</a></li>
-                    <li><a href="#" onclick="selectService(4); return false;" id="list-4">Gearbox & Transmission Service</a></li>
-                    <li><a href="#" onclick="selectService(5); return false;" id="list-5">Fleet Servicing & Fleet Maintenance</a></li>
-                    <li><a href="#" onclick="selectService(6); return false;" id="list-6">Engine Diagnostics & Tune-Ups</a></li>
-                    <li><a href="#" onclick="selectService(7); return false;" id="list-7">Exhaust Fitting & Service</a></li>
+                    <li><a href="#" onclick="selectService(3); return false;" id="list-3">Radiator Repairs & Cooling</a></li>
+                    <li><a href="#" onclick="selectService(4); return false;" id="list-4">Gearbox & Transmission</a></li>
+                    <li><a href="#" onclick="selectService(5); return false;" id="list-5">Fleet Servicing</a></li>
+                    <li><a href="#" onclick="selectService(6); return false;" id="list-6">Engine Diagnostics</a></li>
+                    <li><a href="#" onclick="selectService(7); return false;" id="list-7">Exhaust Fitting</a></li>
                     <li><a href="#" onclick="selectService(8); return false;" id="list-8">Tyre Fitting & Repairs</a></li>
                 </ul>
             </div>
             
             <div class="quick-contact">
                 <h3>Quick Contact</h3>
-                <input type="email" placeholder="Enter Email">
-                <textarea rows="4" placeholder="Enter Message"></textarea>
+                <input type="email" placeholder="Your Email">
+                <textarea rows="3" placeholder="Your Message"></textarea>
                 <button type="button">Send Message</button>
             </div>
         </div>
@@ -1141,22 +1342,21 @@ footer p:nth-child(3){animation-delay:0.6s;}
 <!-- ABOUT -->
 <section id="about">
     <h2>About Reliable Auto Services</h2>
-    <p>Reliable Auto Services is your expert automotive service centre in <strong>Auckland, New Zealand</strong> specializing in WoF, Servicing, Repairs, Tyres & Alignment, Engine & Electrical services. We offer affordable, quality repairs and free consultation with friendly experienced staff.</p>
+    <p>Reliable Auto Services is your expert automotive service centre in <strong>Auckland, New Zealand</strong> specializing in WoF, Servicing, Repairs, Tyres & Alignment, Engine & Electrical services. We offer affordable, quality repairs and free consultation.</p>
 </section>
 
-<!-- LOCATION SECTION - NEW LAYOUT -->
+<!-- LOCATION SECTION -->
 <section class="location-section" id="location">
     <h2>Find Us & Working Hours</h2>
     
     <div class="location-content">
-        <!-- Left Side - Map & Contact Details -->
         <div class="location-left">
             <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51070.94222022688!2d174.7645!3d-36.8485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47fb5a9ce6fb%3A0x500ef6143a29917!2sAuckland%2C%20New%20Zealand!5e0!3m2!1sen!2snz!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
             </div>
             
             <div class="contact-details-box">
-                <h3><i class="fas fa-address-card"></i>Contact Details</h3>
+                <h3><i class="fas fa-address-card"></i> Contact Details</h3>
                 <ul class="contact-list">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
@@ -1169,15 +1369,13 @@ footer p:nth-child(3){animation-delay:0.6s;}
                     <li>
                         <i class="fas fa-phone-alt"></i>
                         <div>
-                            <strong>Phone:</strong><br>
-                            <a href="tel:091234567">09 123 4567</a>
+                            <strong>Phone:</strong> <a href="tel:091234567">09 123 4567</a>
                         </div>
                     </li>
                     <li>
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <strong>Email:</strong><br>
-                            <a href="mailto:info@reliableautoservices.co.nz">info@reliableautoservices.co.nz</a>
+                            <strong>Email:</strong> <a href="mailto:info@reliableautoservices.co.nz">info@reliableautoservices.co.nz</a>
                         </div>
                     </li>
                 </ul>
@@ -1187,39 +1385,17 @@ footer p:nth-child(3){animation-delay:0.6s;}
             </div>
         </div>
         
-        <!-- Right Side - Working Hours -->
         <div class="location-right">
             <div class="working-hours-box">
-                <h3><i class="fas fa-clock"></i>Working Hours</h3>
+                <h3><i class="fas fa-clock"></i> Working Hours</h3>
                 <ul class="hours-list">
-                    <li>
-                        <span class="day">Monday:</span>
-                        <span class="time">8:00 AM - 5:00 PM</span>
-                    </li>
-                    <li>
-                        <span class="day">Tuesday:</span>
-                        <span class="time">8:00 AM - 5:00 PM</span>
-                    </li>
-                    <li>
-                        <span class="day">Wednesday:</span>
-                        <span class="time">8:00 AM - 5:00 PM</span>
-                    </li>
-                    <li>
-                        <span class="day">Thursday:</span>
-                        <span class="time">8:00 AM - 5:00 PM</span>
-                    </li>
-                    <li>
-                        <span class="day">Friday:</span>
-                        <span class="time">8:00 AM - 5:00 PM</span>
-                    </li>
-                    <li>
-                        <span class="day">Saturday:</span>
-                        <span class="time">8:00 AM - 5:00 PM</span>
-                    </li>
-                    <li class="closed">
-                        <span class="day">Sunday:</span>
-                        <span class="time">Closed</span>
-                    </li>
+                    <li><span class="day">Monday:</span><span class="time">8:00 AM - 5:00 PM</span></li>
+                    <li><span class="day">Tuesday:</span><span class="time">8:00 AM - 5:00 PM</span></li>
+                    <li><span class="day">Wednesday:</span><span class="time">8:00 AM - 5:00 PM</span></li>
+                    <li><span class="day">Thursday:</span><span class="time">8:00 AM - 5:00 PM</span></li>
+                    <li><span class="day">Friday:</span><span class="time">8:00 AM - 5:00 PM</span></li>
+                    <li><span class="day">Saturday:</span><span class="time">8:00 AM - 5:00 PM</span></li>
+                    <li class="closed"><span class="day">Sunday:</span><span class="time">Closed</span></li>
                 </ul>
             </div>
         </div>
@@ -1234,6 +1410,12 @@ footer p:nth-child(3){animation-delay:0.6s;}
 </footer>
 
 <script>
+// Mobile Menu Toggle
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobileNav');
+    mobileNav.classList.toggle('active');
+}
+
 // Hero Slider
 let currentSlide = 0;
 const slides = document.querySelectorAll('.hero-slide');
@@ -1251,7 +1433,6 @@ function nextSlide() {
     goToSlide((currentSlide + 1) % slides.length);
 }
 
-// Auto slide every 5 seconds
 setInterval(nextSlide, 5000);
 
 // Service Data
@@ -1259,7 +1440,7 @@ const serviceData = [
     {
         image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         title: 'WOF - Warrant of Fitness',
-        desc: 'A warrant of fitness (WoF) is a regular check to ensure that your vehicle meets required safety standards. It\'s our job to keep your vehicle up to WoF condition at all times. Our certified inspectors thoroughly check all safety aspects including brakes, tyres, lights, steering, and structural integrity.',
+        desc: 'A warrant of fitness (WoF) is a regular check to ensure that your vehicle meets required safety standards. Our certified inspectors thoroughly check all safety aspects including brakes, tyres, lights, steering, and structural integrity.',
         didYouKnowTitle: 'Did you know: WOF',
         didYouKnowText: 'Your vehicle must have a current WoF to be legally driven on the road. Driving without a valid WoF can result in fines and insurance issues.'
     },
@@ -1338,16 +1519,11 @@ function backToServices() {
 
 // Select Service from List
 function selectService(index) {
-    // Update active state in list
     document.querySelectorAll('.service-list a').forEach((a, i) => {
-        if (i === index) {
-            a.classList.add('active');
-        } else {
-            a.classList.remove('active');
-        }
+        if (i === index) a.classList.add('active');
+        else a.classList.remove('active');
     });
     
-    // Update content
     const service = serviceData[index];
     document.getElementById('detailImage').src = service.image;
     document.getElementById('detailDesc').textContent = service.desc;
@@ -1355,59 +1531,30 @@ function selectService(index) {
     document.getElementById('didYouKnowText').textContent = service.didYouKnowText;
 }
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
-};
-
+// Intersection Observer
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            
-            if (entry.target.querySelector('.service-card')) {
-                const children = entry.target.querySelectorAll('.service-card');
-                children.forEach((child, index) => {
-                    setTimeout(() => {
-                        child.classList.add('visible');
-                    }, index * 100);
-                });
-            }
         }
     });
-}, observerOptions);
+}, {threshold: 0.15});
 
 document.querySelectorAll('#about, .service-card, .location-section').forEach(el => {
     observer.observe(el);
 });
 
 // Smooth scroll
-document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            target.scrollIntoView({behavior: 'smooth', block: 'start'});
         }
     });
-});
-
-// Header shadow on scroll
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
-    } else {
-        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
-    }
 });
 </script>
 
 </body>
 </html>
-
-
