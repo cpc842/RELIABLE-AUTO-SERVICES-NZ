@@ -59,7 +59,7 @@ header{
     gap:15px;
 }
 header img{
-    height:90px;
+    height:50px;
     filter:drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
 
@@ -224,6 +224,7 @@ header img{
 .desktop-nav ul li:nth-child(2){animation-delay:0.5s;}
 .desktop-nav ul li:nth-child(3){animation-delay:0.6s;}
 .desktop-nav ul li:nth-child(4){animation-delay:0.7s;}
+.desktop-nav ul li:nth-child(5){animation-delay:0.8s;}
 
 .desktop-nav ul li a{
     color:var(--text);
@@ -733,6 +734,104 @@ header img{
     font-weight:600;
 }
 
+/* ================= GALLERY SECTION ================= */
+.gallery-section{
+    padding:60px 20px;
+    background:var(--white);
+    margin:30px 20px;
+    border-radius:20px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+    opacity:0;
+    transform:translateY(60px);
+    transition:all 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+.gallery-section.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+.gallery-section h2{
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:30px;
+    color:var(--text);
+    position:relative;
+    display:inline-block;
+    left:50%;
+    transform:translateX(-50%);
+    font-weight:700;
+}
+.gallery-section h2::after{
+    content:'';
+    position:absolute;
+    bottom:-10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:60px;
+    height:4px;
+    background:var(--primary);
+    border-radius:2px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.gallery-item{
+    position:relative;
+    border-radius:12px;
+    overflow:hidden;
+    height:250px;
+    cursor:pointer;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:all 0.3s ease;
+    text-decoration:none;
+    display:block;
+}
+
+.gallery-item:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform 0.5s ease;
+    display:block;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.1);
+}
+
+.gallery-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(211,47,47,0.8);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transition:all 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay{
+    opacity:1;
+}
+
+.gallery-overlay i{
+    color:var(--white);
+    font-size:2rem;
+}
+
 /* ================= LOCATION SECTION ================= */
 .location-section{
     padding:60px 20px;
@@ -1023,6 +1122,11 @@ footer p:nth-child(3){animation-delay:0.6s;}
     .location-content{
         grid-template-columns:1fr;
     }
+    
+    .gallery-grid{
+        grid-template-columns:1fr;
+        max-width:500px;
+    }
 }
 
 @media(max-width:768px){
@@ -1094,6 +1198,18 @@ footer p:nth-child(3){animation-delay:0.6s;}
         font-size:0.95rem;
     }
     
+    .gallery-section{
+        margin:20px 15px;
+        padding:40px 15px;
+    }
+    .gallery-section h2{
+        font-size:1.5rem;
+        margin-bottom:25px;
+    }
+    .gallery-item{
+        height:200px;
+    }
+    
     .location-section{
         margin:20px 15px;
         padding:40px 15px;
@@ -1156,6 +1272,10 @@ footer p:nth-child(3){animation-delay:0.6s;}
     
     .service-image{
         height:160px;
+    }
+    
+    .gallery-item{
+        height:180px;
     }
     
     .map-container iframe{
@@ -1247,6 +1367,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
         <li><a href="#home" class="mobile-nav-link">Home</a></li>
         <li><a href="#about" class="mobile-nav-link">About Us</a></li>
         <li><a href="#services" class="mobile-nav-link">Services</a></li>
+        <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
         <li><a href="#location" class="mobile-nav-link">Location</a></li>
     </ul>
 </nav>
@@ -1258,6 +1379,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#location">Location</a></li>
         </ul>
     </div>
@@ -1380,6 +1502,55 @@ footer p:nth-child(3){animation-delay:0.6s;}
 <section id="about">
     <h2>About Reliable Auto Services</h2>
     <p>Reliable Auto Services is your expert automotive service centre in <strong>Auckland, New Zealand</strong> specializing in WoF, Servicing, Repairs, Tyres & Alignment, Engine & Electrical services. We offer affordable, quality repairs and free consultation.</p>
+</section>
+
+<!-- GALLERY SECTION -->
+<section class="gallery-section" id="gallery">
+    <h2>Our Work</h2>
+    
+    <div class="gallery-grid">
+        <a href="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work 1">
+            <div class="gallery-overlay">
+                <i class="fas fa-external-link-alt"></i>
+            </div>
+        </a>
+        
+        <a href="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work 2">
+            <div class="gallery-overlay">
+                <i class="fas fa-external-link-alt"></i>
+            </div>
+        </a>
+        
+        <a href="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work 3">
+            <div class="gallery-overlay">
+                <i class="fas fa-external-link-alt"></i>
+            </div>
+        </a>
+        
+        <a href="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work 4">
+            <div class="gallery-overlay">
+                <i class="fas fa-external-link-alt"></i>
+            </div>
+        </a>
+        
+        <a href="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work 5">
+            <div class="gallery-overlay">
+                <i class="fas fa-external-link-alt"></i>
+            </div>
+        </a>
+        
+        <a href="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work 6">
+            <div class="gallery-overlay">
+                <i class="fas fa-external-link-alt"></i>
+            </div>
+        </a>
+    </div>
 </section>
 
 <!-- LOCATION SECTION -->
@@ -1615,7 +1786,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, {threshold: 0.15});
 
-document.querySelectorAll('#about, .service-card, .location-section').forEach(el => {
+document.querySelectorAll('#about, .service-card, .location-section, .gallery-section').forEach(el => {
     observer.observe(el);
 });
 
@@ -1633,5 +1804,3 @@ document.querySelectorAll('.desktop-nav a[href^="#"]').forEach(anchor => {
 
 </body>
 </html>
-
-
