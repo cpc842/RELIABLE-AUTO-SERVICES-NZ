@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reliable Auto Services</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css ">
 
 <style>
 /* ================= THEME VARIABLES - WHITE & RED ================= */
@@ -179,6 +179,32 @@ header img{
     color:var(--primary);
 }
 
+/* BOOKING BUTTON IN HEADER */
+.booking-btn-header{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:var(--primary);
+    color:var(--white);
+    padding:10px 20px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.9rem;
+    transition:all 0.3s;
+    box-shadow:var(--shadow);
+    border:none;
+    cursor:pointer;
+}
+.booking-btn-header:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+    box-shadow:var(--shadow-hover);
+}
+.booking-btn-header i{
+    font-size:0.9rem;
+}
+
 /* Mobile Contact Button */
 .mobile-contact-btn{
     display:none;
@@ -191,6 +217,33 @@ header img{
     font-size:0.85rem;
     align-items:center;
     gap:6px;
+}
+
+/* Floating Booking Button for Mobile */
+.floating-booking-btn{
+    display:none;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:var(--primary);
+    color:var(--white);
+    padding:15px 25px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:1rem;
+    box-shadow:0 4px 20px rgba(211,47,47,0.4);
+    z-index:1001;
+    align-items:center;
+    gap:10px;
+    transition:all 0.3s;
+    border:none;
+    cursor:pointer;
+}
+.floating-booking-btn:hover{
+    background:var(--primary-dark);
+    transform:translateY(-3px);
+    box-shadow:0 6px 25px rgba(211,47,47,0.5);
 }
 
 /* ================= NAVIGATION ================= */
@@ -314,6 +367,28 @@ header img{
     background:var(--primary-light);
     color:var(--primary);
     padding-left:30px;
+}
+
+/* Mobile Booking Button in Nav */
+.mobile-nav .booking-nav-btn{
+    margin:20px 25px;
+    display:block;
+    padding:15px 20px;
+    background:var(--primary);
+    color:var(--white);
+    text-decoration:none;
+    font-size:1rem;
+    font-weight:600;
+    text-align:center;
+    border-radius:8px;
+    transition:all 0.3s;
+}
+.mobile-nav .booking-nav-btn:hover{
+    background:var(--primary-dark);
+    padding-left:20px;
+}
+.mobile-nav .booking-nav-btn i{
+    margin-right:8px;
 }
 
 /* ================= HERO SLIDER ================= */
@@ -1030,6 +1105,128 @@ header img{
     font-weight:700;
 }
 
+/* ================= BOOKING MODAL ================= */
+.booking-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:2000;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+.booking-modal.active{
+    display:flex;
+}
+.booking-modal-content{
+    background:var(--white);
+    border-radius:20px;
+    max-width:500px;
+    width:100%;
+    max-height:90vh;
+    overflow-y:auto;
+    position:relative;
+    animation:modalSlideIn 0.3s ease;
+}
+@keyframes modalSlideIn{
+    from{transform:translateY(-50px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
+.booking-modal-header{
+    background:var(--primary);
+    color:var(--white);
+    padding:25px;
+    border-radius:20px 20px 0 0;
+    text-align:center;
+}
+.booking-modal-header h3{
+    font-size:1.5rem;
+    margin-bottom:5px;
+}
+.booking-modal-header p{
+    font-size:0.9rem;
+    opacity:0.9;
+}
+.booking-close-btn{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:none;
+    border:none;
+    color:var(--white);
+    font-size:1.5rem;
+    cursor:pointer;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all 0.3s;
+}
+.booking-close-btn:hover{
+    background:rgba(255,255,255,0.2);
+}
+.booking-modal-body{
+    padding:25px;
+}
+.booking-form-group{
+    margin-bottom:20px;
+}
+.booking-form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:var(--text);
+    font-size:0.9rem;
+}
+.booking-form-group input,
+.booking-form-group select,
+.booking-form-group textarea{
+    width:100%;
+    padding:12px 15px;
+    border:2px solid var(--gray-light);
+    border-radius:10px;
+    font-family:inherit;
+    font-size:0.95rem;
+    transition:all 0.3s;
+}
+.booking-form-group input:focus,
+.booking-form-group select:focus,
+.booking-form-group textarea:focus{
+    outline:none;
+    border-color:var(--primary);
+}
+.booking-form-group textarea{
+    resize:vertical;
+    min-height:80px;
+}
+.booking-submit-btn{
+    width:100%;
+    padding:15px;
+    background:var(--primary);
+    color:var(--white);
+    border:none;
+    border-radius:10px;
+    font-weight:600;
+    font-size:1rem;
+    cursor:pointer;
+    transition:all 0.3s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+}
+.booking-submit-btn:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+    box-shadow:var(--shadow-hover);
+}
+
 /* ================= FOOTER ================= */
 footer{
     background:var(--text);
@@ -1091,6 +1288,9 @@ footer p:nth-child(3){animation-delay:0.6s;}
     .header-contact{
         display:none;
     }
+    .booking-btn-header{
+        display:none;
+    }
     .mobile-contact-btn{
         display:flex;
     }
@@ -1102,6 +1302,9 @@ footer p:nth-child(3){animation-delay:0.6s;}
     }
     .mobile-nav{
         display:block;
+    }
+    .floating-booking-btn{
+        display:flex;
     }
     
     .featured-services{
@@ -1252,6 +1455,26 @@ footer p:nth-child(3){animation-delay:0.6s;}
     footer p{
         font-size:0.85rem;
     }
+    
+    .floating-booking-btn{
+        padding:12px 20px;
+        font-size:0.9rem;
+        bottom:15px;
+        right:15px;
+    }
+    
+    .booking-modal-content{
+        max-height:85vh;
+    }
+    .booking-modal-header{
+        padding:20px;
+    }
+    .booking-modal-header h3{
+        font-size:1.3rem;
+    }
+    .booking-modal-body{
+        padding:20px;
+    }
 }
 
 @media(max-width:480px){
@@ -1310,8 +1533,14 @@ footer p:nth-child(3){animation-delay:0.6s;}
         padding:18px 20px;
         font-size:1rem;
     }
+    
+    .floating-booking-btn{
+        padding:10px 18px;
+        font-size:0.85rem;
+    }
 }
 </style>
+<base target="_blank">
 </head>
 
 <body>
@@ -1348,6 +1577,11 @@ footer p:nth-child(3){animation-delay:0.6s;}
             </div>
         </div>
         
+        <!-- BOOKING BUTTON IN HEADER -->
+        <button class="booking-btn-header" onclick="openBookingModal()">
+            <i class="fas fa-calendar-check"></i> Book Now
+        </button>
+        
         <a href="tel:091234567" class="mobile-contact-btn">
             <i class="fas fa-phone"></i> Call
         </a>
@@ -1370,7 +1604,16 @@ footer p:nth-child(3){animation-delay:0.6s;}
         <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
         <li><a href="#location" class="mobile-nav-link">Location</a></li>
     </ul>
+    <!-- BOOKING BUTTON IN MOBILE NAV -->
+    <button class="booking-nav-btn" onclick="openBookingModal(); closeMobileMenu();">
+        <i class="fas fa-calendar-check"></i> Book Appointment
+    </button>
 </nav>
+
+<!-- FLOATING BOOKING BUTTON FOR MOBILE -->
+<button class="floating-booking-btn" onclick="openBookingModal()">
+    <i class="fas fa-calendar-check"></i> Book Now
+</button>
 
 <!-- DESKTOP NAVIGATION -->
 <nav class="desktop-nav">
@@ -1387,7 +1630,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
 
 <!-- HERO SLIDER -->
 <div class="hero-slider" id="home">
-    <div class="hero-slide active" style="background:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
+    <div class="hero-slide active" style="background:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 ') center/cover no-repeat;">
         <div>
             <h2>Your One Stop <span>Automotive</span><br>Repair Shop</h2>
             <p>Dealer standard service without paying dealer premium prices. Expert care for your vehicle.</p>
@@ -1395,7 +1638,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
         </div>
     </div>
     
-    <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
+    <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 ') center/cover no-repeat;">
         <div>
             <h2>Professional <span>WOF</span> Inspections</h2>
             <p>Get your Warrant of Fitness done quickly and efficiently by our certified inspectors.</p>
@@ -1403,7 +1646,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
         </div>
     </div>
     
-    <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
+    <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 ') center/cover no-repeat;">
         <div>
             <h2>Expert <span>Engine</span> Repairs</h2>
             <p>From diagnostics to complete rebuilds, our skilled technicians handle it all.</p>
@@ -1425,7 +1668,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
     <div class="featured-services" id="featuredServices">
         <div class="service-card">
             <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="WOF Inspection">
+                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="WOF Inspection">
             </div>
             <div class="service-content">
                 <h3>WOF - <span>WARRANT OF FITNESS</span></h3>
@@ -1436,7 +1679,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
         
         <div class="service-card">
             <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Engine Repair">
+                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Engine Repair">
             </div>
             <div class="service-content">
                 <h3>ENGINE REPAIR & <span>REBUILDING</span></h3>
@@ -1447,7 +1690,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
         
         <div class="service-card">
             <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fleet Maintenance">
+                <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Fleet Maintenance">
             </div>
             <div class="service-content">
                 <h3>FLEET <span>MAINTENANCE</span></h3>
@@ -1509,43 +1752,43 @@ footer p:nth-child(3){animation-delay:0.6s;}
     <h2>Our Work</h2>
     
     <div class="gallery-grid">
-        <a href="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work 1">
+        <a href="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Work 1">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work 2">
+        <a href="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Work 2">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work 3">
+        <a href="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Work 3">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work 4">
+        <a href="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Work 4">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work 5">
+        <a href="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Work 5">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Work 6">
+        <a href="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Work 6">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
@@ -1560,7 +1803,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
     <div class="location-content">
         <div class="location-left">
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51070.94222022688!2d174.7645!3d-36.8485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47fb5a9ce6fb%3A0x500ef6143a29917!2sAuckland%2C%20New%20Zealand!5e0!3m2!1sen!2snz!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb= !1m18!1m12!1m3!1d51070.94222022688!2d174.7645!3d-36.8485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d47fb5a9ce6fb%3A0x500ef6143a29917!2sAuckland%2C%20New%20Zealand!5e0!3m2!1sen!2snz!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
             </div>
             
             <div class="contact-details-box">
@@ -1587,7 +1830,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
                         </div>
                     </li>
                 </ul>
-                <a href="https://www.google.com/maps/dir//Auckland,+New+Zealand" target="_blank" class="directions-btn">
+                <a href="https://www.google.com/maps/dir//Auckland ,+New+Zealand" target="_blank" class="directions-btn">
                     <i class="fas fa-directions"></i> Get Directions
                 </a>
             </div>
@@ -1616,6 +1859,81 @@ footer p:nth-child(3){animation-delay:0.6s;}
     <p>123 Queen Street, Auckland CBD, Auckland 1010, New Zealand | 09 123 4567</p>
     <p>Professional Automotive Care You Can Trust</p>
 </footer>
+
+<!-- BOOKING MODAL -->
+<div class="booking-modal" id="bookingModal">
+    <div class="booking-modal-content">
+        <div class="booking-modal-header">
+            <button class="booking-close-btn" onclick="closeBookingModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3><i class="fas fa-calendar-check"></i> Book Appointment</h3>
+            <p>Schedule your vehicle service with us</p>
+        </div>
+        <div class="booking-modal-body">
+            <form id="bookingForm" onsubmit="submitBooking(event)">
+                <div class="booking-form-group">
+                    <label for="bookingName"><i class="fas fa-user"></i> Your Name *</label>
+                    <input type="text" id="bookingName" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="booking-form-group">
+                    <label for="bookingPhone"><i class="fas fa-phone"></i> Phone Number *</label>
+                    <input type="tel" id="bookingPhone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="booking-form-group">
+                    <label for="bookingEmail"><i class="fas fa-envelope"></i> Email Address</label>
+                    <input type="email" id="bookingEmail" name="email" placeholder="Enter your email (optional)">
+                </div>
+                <div class="booking-form-group">
+                    <label for="bookingService"><i class="fas fa-wrench"></i> Service Type *</label>
+                    <select id="bookingService" name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="wof">WOF - Warrant of Fitness</option>
+                        <option value="engine">Engine Repair & Rebuilding</option>
+                        <option value="brake">Brake & Clutch Service</option>
+                        <option value="radiator">Radiator Repairs & Cooling</option>
+                        <option value="gearbox">Gearbox & Transmission</option>
+                        <option value="fleet">Fleet Servicing</option>
+                        <option value="diagnostics">Engine Diagnostics</option>
+                        <option value="exhaust">Exhaust Fitting</option>
+                        <option value="tyre">Tyre Fitting & Repairs</option>
+                        <option value="other">Other Service</option>
+                    </select>
+                </div>
+                <div class="booking-form-group">
+                    <label for="bookingDate"><i class="fas fa-calendar"></i> Preferred Date *</label>
+                    <input type="date" id="bookingDate" name="date" required>
+                </div>
+                <div class="booking-form-group">
+                    <label for="bookingTime"><i class="fas fa-clock"></i> Preferred Time *</label>
+                    <select id="bookingTime" name="time" required>
+                        <option value="">Select a time</option>
+                        <option value="8:00 AM">8:00 AM</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                    </select>
+                </div>
+                <div class="booking-form-group">
+                    <label for="bookingVehicle"><i class="fas fa-car"></i> Vehicle Details</label>
+                    <input type="text" id="bookingVehicle" name="vehicle" placeholder="e.g., 2018 Toyota Corolla">
+                </div>
+                <div class="booking-form-group">
+                    <label for="bookingNotes"><i class="fas fa-comment"></i> Additional Notes</label>
+                    <textarea id="bookingNotes" name="notes" placeholder="Any specific issues or requests..."></textarea>
+                </div>
+                <button type="submit" class="booking-submit-btn">
+                    <i class="fas fa-paper-plane"></i> Submit Booking Request
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <script>
 // Mobile Menu Toggle
@@ -1681,66 +1999,109 @@ function nextSlide() {
 
 setInterval(nextSlide, 5000);
 
+// Booking Modal Functions
+function openBookingModal() {
+    document.getElementById('bookingModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('bookingDate').setAttribute('min', today);
+}
+
+function closeBookingModal() {
+    document.getElementById('bookingModal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function submitBooking(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(event.target);
+    const name = formData.get('name');
+    const service = formData.get('service');
+    const date = formData.get('date');
+    const time = formData.get('time');
+    
+    // Get service name from select
+    const serviceSelect = document.getElementById('bookingService');
+    const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+    
+    // Show confirmation alert
+    alert(`Thank you ${name}!\n\nYour booking request has been received:\n• Service: ${serviceName}\n• Date: ${date}\n• Time: ${time}\n\nWe will contact you shortly to confirm your appointment.`);
+    
+    // Close modal and reset form
+    closeBookingModal();
+    event.target.reset();
+}
+
+// Close modal when clicking outside
+ document.getElementById('bookingModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeBookingModal();
+    }
+});
+
 // Service Data
 const serviceData = [
     {
-        image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
         title: 'WOF - Warrant of Fitness',
         desc: 'A warrant of fitness (WoF) is a regular check to ensure that your vehicle meets required safety standards. Our certified inspectors thoroughly check all safety aspects including brakes, tyres, lights, steering, and structural integrity.',
         didYouKnowTitle: 'Did you know: WOF',
         didYouKnowText: 'Your vehicle must have a current WoF to be legally driven on the road. Driving without a valid WoF can result in fines and insurance issues.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
         title: 'Engine Repair & Rebuilding',
         desc: 'Our trained mechanics are fully qualified to advise, handle minor and major engine repairs, including Engine Rebuilding and Engine Reconditioning with guaranteed quality. We use state-of-the-art equipment and genuine parts.',
         didYouKnowTitle: 'Did you know: Engine',
         didYouKnowText: 'Regular oil changes and maintenance can extend your engine life by over 100,000 kilometers. Prevention is always cheaper than repair.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
         title: 'Brake & Clutch Service',
         desc: 'Includes System Checks, Machining of Discs, Drums & Flywheel. Brake shoe & pad replacement, Clutch overhauls & Hydraulic repairs. We ensure your safety with every brake service.',
         didYouKnowTitle: 'Did you know: Brakes',
         didYouKnowText: 'If your brakes are squealing, pulling the vehicle to one side or making your steering wheel shake, then it\'s time to have them checked immediately.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
         title: 'Radiator Repairs & Cooling System Service',
         desc: 'Complete cooling system diagnostics and repairs. We handle radiator leaks, thermostat replacements, water pump repairs, and coolant flushes to prevent overheating.',
         didYouKnowTitle: 'Did you know: Cooling',
         didYouKnowText: 'Overheating is the leading cause of engine damage. Regular coolant checks can prevent costly repairs.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
         title: 'Gearbox & Transmission Service',
         desc: 'Complete transmission services including repairs, rebuilds, and fluid changes. We handle both manual and automatic transmissions with expert care and precision.',
         didYouKnowTitle: 'Did you know: Transmission',
         didYouKnowText: 'Regular transmission fluid changes can prevent 90% of transmission failures. Don\'t ignore strange noises or delayed shifting.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
         title: 'Fleet Servicing & Fleet Maintenance',
         desc: 'Processes that are completely focused on professional automotive maintenance and repair conducted with highly efficient speed and delivery of service for your fleet.',
         didYouKnowTitle: 'Did you know: Fleet',
         didYouKnowText: 'Regular fleet maintenance reduces downtime by up to 40% and extends vehicle lifespan significantly.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
         title: 'Engine Diagnostics & Tune-Ups',
         desc: 'Advanced computer diagnostics to identify and fix issues quickly. Our state-of-the-art equipment ensures accurate problem detection every time.',
         didYouKnowTitle: 'Did you know: Diagnostics',
         didYouKnowText: 'Modern vehicles have over 50 sensors. Our diagnostic tools can read all of them to pinpoint issues instantly.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
         title: 'Exhaust Fitting & Service',
         desc: 'Complete exhaust system repairs and replacements. From mufflers to catalytic converters, we keep your vehicle running clean and quiet.',
         didYouKnowTitle: 'Did you know: Exhaust',
         didYouKnowText: 'A faulty exhaust system can reduce fuel efficiency by up to 15% and increase harmful emissions.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1578844251758-2f71da64c96f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1578844251758-2f71da64c96f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
         title: 'Tyre Fitting & Repairs',
         desc: 'Professional tyre fitting, balancing, and repairs. We stock all major brands and offer wheel alignment services for optimal safety and performance.',
         didYouKnowTitle: 'Did you know: Tyres',
