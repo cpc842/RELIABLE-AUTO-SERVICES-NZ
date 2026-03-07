@@ -11,7 +11,7 @@
 
 <meta name="google-site-verification" content="-sWOj7R08LkTg9ydyiP-tZgtFMl8jeqE4k3jiFE5VTA" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css ">
 
 <style>
 /* ================= THEME VARIABLES - WHITE & RED ================= */
@@ -492,7 +492,7 @@ header img{
     transform:scale(1.2);
 }
 
-/* ================= SERVICES SECTION ================= */
+/* ================= SERVICES SECTION - SPLIT LAYOUT ================= */
 .services-section{
     padding:60px 20px;
     background:var(--off-white);
@@ -519,242 +519,226 @@ header img{
     border-radius:2px;
 }
 
-/* Featured Services - 3 Cards */
-.featured-services{
+/* Split Layout Container */
+.services-split-container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-    max-width:1200px;
-    margin:0 auto 50px;
-}
-.service-card{
-    background:var(--white);
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 4px 15px rgba(0,0,0,0.1);
-    transition:all 0.4s ease;
-    opacity:0;
-    transform:translateY(40px);
-}
-.service-card.visible{
-    opacity:1;
-    transform:translateY(0);
-}
-.service-card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 15px 35px rgba(0,0,0,0.15);
-}
-.service-image{
-    width:100%;
-    height:200px;
-    overflow:hidden;
-}
-.service-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:transform 0.5s ease;
-}
-.service-card:hover .service-image img{
-    transform:scale(1.1);
-}
-.service-content{
-    padding:20px;
-}
-.service-content h3{
-    font-size:1rem;
-    font-weight:700;
-    color:var(--text);
-    margin-bottom:12px;
-    text-transform:uppercase;
-    letter-spacing:0.5px;
-}
-.service-content h3 span{
-    color:var(--primary);
-}
-.service-content p{
-    color:var(--text-light);
-    font-size:0.9rem;
-    line-height:1.6;
-    margin-bottom:15px;
-}
-.read-more-btn{
-    display:inline-block;
-    padding:10px 22px;
-    background:var(--navy);
-    color:var(--white);
-    text-decoration:none;
-    font-size:0.85rem;
-    font-weight:600;
-    border-radius:6px;
-    transition:all 0.3s;
-    border:none;
-    cursor:pointer;
-}
-.read-more-btn:hover{
-    background:var(--navy-light);
-    transform:translateX(5px);
-}
-
-/* Detailed Service View */
-.detailed-service-view{
-    display:none;
+    grid-template-columns:1fr 350px;
+    gap:30px;
     max-width:1200px;
     margin:0 auto;
-    gap:30px;
-    animation:fadeIn 0.5s ease;
-}
-.detailed-service-view.active{
-    display:flex;
-}
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
+    align-items:start;
 }
 
-.service-detail-left{
-    flex:1;
+/* Left Side - Service Detail View */
+.service-detail-view{
+    background:var(--white);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    min-height:600px;
+    display:flex;
+    flex-direction:column;
 }
 .service-detail-image{
     width:100%;
-    height:350px;
+    height:300px;
     overflow:hidden;
-    border-radius:12px;
-    margin-bottom:20px;
+    position:relative;
 }
 .service-detail-image img{
     width:100%;
     height:100%;
     object-fit:cover;
+    transition:transform 0.5s ease;
+}
+.service-detail-content{
+    padding:30px;
+    flex-grow:1;
+    display:flex;
+    flex-direction:column;
+}
+.service-detail-content h3{
+    font-size:1.5rem;
+    color:var(--text);
+    margin-bottom:15px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+}
+.service-detail-content h3 span{
+    color:var(--primary);
 }
 .service-detail-desc{
     color:var(--text-light);
-    font-size:0.95rem;
+    font-size:1rem;
     line-height:1.8;
     margin-bottom:20px;
 }
-.did-you-know{
-    margin-top:25px;
+
+/* Service Features in Detail View */
+.service-features-detail{
+    list-style:none;
+    margin:20px 0;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:10px;
+}
+.service-features-detail li{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.9rem;
+    color:var(--text);
+    padding:8px;
+    background:var(--gray-light);
+    border-radius:6px;
+}
+.service-features-detail li i{
+    color:var(--primary);
+    font-size:0.8rem;
+}
+
+/* Did You Know Box */
+.did-you-know-box{
+    margin-top:auto;
     background:var(--primary-light);
     padding:20px;
     border-radius:12px;
+    border-left:4px solid var(--primary);
 }
-.did-you-know h4{
-    color:var(--text);
+.did-you-know-box h4{
+    color:var(--primary-dark);
     font-size:1.1rem;
     margin-bottom:10px;
-    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
-.did-you-know h4::after{
-    content:'';
-    display:block;
-    width:40px;
-    height:3px;
-    background:var(--primary);
-    margin-top:8px;
-}
-.did-you-know p{
-    color:var(--text-light);
-    font-size:0.9rem;
-    line-height:1.7;
-}
-
-.service-detail-right{
-    width:320px;
-}
-.services-list-box h3{
-    font-size:1.1rem;
-    color:var(--text);
-    margin-bottom:15px;
-    padding-bottom:10px;
-    border-bottom:3px solid var(--primary);
-    display:inline-block;
-}
-.service-list{
-    list-style:none;
-}
-.service-list li{
-    margin-bottom:6px;
-}
-.service-list a{
-    display:block;
-    padding:12px;
-    background:var(--navy);
-    color:var(--white);
-    text-decoration:none;
-    font-size:0.85rem;
-    transition:all 0.3s;
-    position:relative;
-    border-radius:6px;
-}
-.service-list a:hover,
-.service-list a.active{
-    background:var(--primary);
-    padding-left:20px;
-}
-
-/* Quick Contact Form */
-.quick-contact{
-    margin-top:25px;
-    padding:20px;
-    background:var(--white);
-    box-shadow:0 4px 15px rgba(0,0,0,0.1);
-    border-radius:12px;
-}
-.quick-contact h3{
-    font-size:1.1rem;
-    color:var(--text);
-    margin-bottom:15px;
-    padding-bottom:10px;
-    border-bottom:3px solid var(--primary);
-    display:inline-block;
-}
-.quick-contact input,
-.quick-contact textarea{
-    width:100%;
-    padding:12px;
-    margin-bottom:12px;
-    border:1px solid var(--gray-light);
-    border-radius:8px;
-    font-family:inherit;
-    font-size:0.9rem;
-}
-.quick-contact input:focus,
-.quick-contact textarea:focus{
-    outline:none;
-    border-color:var(--primary);
-}
-.quick-contact button{
-    width:100%;
-    padding:14px;
-    background:var(--navy);
-    color:var(--white);
-    border:none;
-    border-radius:8px;
-    font-weight:600;
-    cursor:pointer;
-    transition:all 0.3s;
+.did-you-know-box h4 i{
     font-size:1rem;
 }
-.quick-contact button:hover{
-    background:var(--primary);
+.did-you-know-box p{
+    color:var(--text);
+    font-size:0.95rem;
+    line-height:1.6;
 }
 
-/* Back button */
-.back-to-services{
-    display:inline-block;
-    margin-bottom:20px;
-    padding:10px 20px;
-    background:var(--gray-light);
-    color:var(--text);
-    text-decoration:none;
-    border-radius:8px;
-    transition:all 0.3s;
-    font-weight:500;
+/* Right Side - Service List Sidebar */
+.service-sidebar{
+    background:var(--white);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    position:sticky;
+    top:100px;
+    max-height:calc(100vh - 120px);
+    overflow-y:auto;
 }
-.back-to-services:hover{
+.sidebar-header{
     background:var(--primary);
     color:var(--white);
+    padding:20px;
+    text-align:center;
+}
+.sidebar-header h3{
+    font-size:1.2rem;
+    margin:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+}
+.sidebar-header h3 i{
+    font-size:1.1rem;
+}
+.service-list-nav{
+    list-style:none;
+    padding:0;
+}
+.service-list-nav li{
+    border-bottom:1px solid var(--gray-light);
+}
+.service-list-nav li:last-child{
+    border-bottom:none;
+}
+.service-list-nav button{
+    width:100%;
+    padding:15px 20px;
+    background:none;
+    border:none;
+    text-align:left;
+    font-family:inherit;
+    font-size:0.9rem;
+    color:var(--text);
+    cursor:pointer;
+    transition:all 0.3s;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    position:relative;
+}
+.service-list-nav button:hover{
+    background:var(--primary-light);
+    color:var(--primary-dark);
+    padding-left:25px;
+}
+.service-list-nav button.active{
+    background:var(--primary);
+    color:var(--white);
+    font-weight:600;
+}
+.service-list-nav button.active::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:4px;
+    background:var(--accent);
+}
+.service-list-nav button i{
+    width:24px;
+    height:24px;
+    background:var(--primary-light);
+    color:var(--primary);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:0.7rem;
+    flex-shrink:0;
+    transition:all 0.3s;
+}
+.service-list-nav button.active i{
+    background:var(--white);
+    color:var(--primary);
+}
+.service-list-nav button:hover i{
+    transform:scale(1.1);
+}
+
+/* Book Service Button in Sidebar */
+.sidebar-book-btn{
+    display:block;
+    margin:20px;
+    padding:15px;
+    background:var(--navy);
+    color:var(--white);
+    text-align:center;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:600;
+    transition:all 0.3s;
+    border:none;
+    cursor:pointer;
+    font-size:0.95rem;
+}
+.sidebar-book-btn:hover{
+    background:var(--primary);
+    transform:translateY(-2px);
+    box-shadow:var(--shadow-hover);
+}
+.sidebar-book-btn i{
+    margin-right:8px;
 }
 
 /* ================= ABOUT ================= */
@@ -1313,19 +1297,33 @@ footer p:nth-child(3){animation-delay:0.6s;}
         display:flex;
     }
     
-    .featured-services{
+    /* Services Split Layout Responsive */
+    .services-split-container{
         grid-template-columns:1fr;
-        max-width:500px;
     }
-    
-    .detailed-service-view.active{
-        flex-direction:column;
+    .service-sidebar{
+        position:relative;
+        top:0;
+        max-height:none;
+        order:2;
     }
-    .service-detail-right{
-        width:100%;
+    .service-detail-view{
+        order:1;
+        min-height:auto;
     }
-    .service-detail-image{
-        height:250px;
+    .service-list-nav{
+        display:grid;
+        grid-template-columns:repeat(2, 1fr);
+    }
+    .service-list-nav li{
+        border-bottom:none;
+        border-right:1px solid var(--gray-light);
+    }
+    .service-list-nav li:nth-child(even){
+        border-right:none;
+    }
+    .sidebar-book-btn{
+        margin:15px;
     }
     
     .location-content{
@@ -1383,17 +1381,25 @@ footer p:nth-child(3){animation-delay:0.6s;}
         margin-bottom:30px;
     }
     
-    .service-image{
-        height:180px;
+    .service-detail-image{
+        height:200px;
     }
-    .service-content{
-        padding:18px;
+    .service-detail-content{
+        padding:20px;
     }
-    .service-content h3{
-        font-size:0.95rem;
+    .service-detail-content h3{
+        font-size:1.2rem;
     }
-    .service-content p{
-        font-size:0.85rem;
+    .service-features-detail{
+        grid-template-columns:1fr;
+    }
+    
+    .service-list-nav{
+        grid-template-columns:1fr;
+    }
+    .service-list-nav li{
+        border-right:none;
+        border-bottom:1px solid var(--gray-light);
     }
     
     #about{
@@ -1499,8 +1505,8 @@ footer p:nth-child(3){animation-delay:0.6s;}
         height:10px;
     }
     
-    .service-image{
-        height:160px;
+    .service-detail-image{
+        height:180px;
     }
     
     .gallery-item{
@@ -1636,7 +1642,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
 
 <!-- HERO SLIDER -->
 <div class="hero-slider" id="home">
-    <div class="hero-slide active" style="background:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 ') center/cover no-repeat;">
+    <div class="hero-slide active" style="background:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  ') center/cover no-repeat;">
         <div>
             <h2>Your One Stop <span>Automotive</span><br>Repair Shop</h2>
             <p>Dealer standard service without paying dealer premium prices. Expert care for your vehicle.</p>
@@ -1644,7 +1650,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
         </div>
     </div>
     
-    <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 ') center/cover no-repeat;">
+    <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  ') center/cover no-repeat;">
         <div>
             <h2>Professional <span>WOF</span> Inspections</h2>
             <p>Get your Warrant of Fitness done quickly and efficiently by our certified inspectors.</p>
@@ -1652,7 +1658,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
         </div>
     </div>
     
-    <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 ') center/cover no-repeat;">
+    <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  ') center/cover no-repeat;">
         <div>
             <h2>Expert <span>Engine</span> Repairs</h2>
             <p>From diagnostics to complete rebuilds, our skilled technicians handle it all.</p>
@@ -1667,82 +1673,102 @@ footer p:nth-child(3){animation-delay:0.6s;}
     </div>
 </div>
 
-<!-- SERVICES SECTION -->
+<!-- SERVICES SECTION - SPLIT LAYOUT -->
 <section class="services-section" id="services">
     <h2>Our Services</h2>
     
-    <div class="featured-services" id="featuredServices">
-        <div class="service-card">
-            <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="WOF Inspection">
-            </div>
-            <div class="service-content">
-                <h3>WOF - <span>WARRANT OF FITNESS</span></h3>
-                <p>A warrant of fitness (WoF) is a regular check to ensure that your vehicle meets required safety standards.</p>
-                <button class="read-more-btn" onclick="showServiceDetail(0)">Read more</button>
-            </div>
-        </div>
-        
-        <div class="service-card">
-            <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Engine Repair">
-            </div>
-            <div class="service-content">
-                <h3>ENGINE REPAIR & <span>REBUILDING</span></h3>
-                <p>Our trained mechanics are fully qualified to handle minor and major engine repairs with guaranteed quality.</p>
-                <button class="read-more-btn" onclick="showServiceDetail(1)">Read more</button>
-            </div>
-        </div>
-        
-        <div class="service-card">
-            <div class="service-image">
-                <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Fleet Maintenance">
-            </div>
-            <div class="service-content">
-                <h3>FLEET <span>MAINTENANCE</span></h3>
-                <p>Professional automotive maintenance conducted with highly efficient speed and delivery for your fleet.</p>
-                <button class="read-more-btn" onclick="showServiceDetail(2)">Read more</button>
-            </div>
-        </div>
-    </div>
-    
-    <div class="detailed-service-view" id="detailedView">
-        <div class="service-detail-left">
-            <a href="#" class="back-to-services" onclick="backToServices(); return false;">
-                <i class="fas fa-arrow-left"></i> Back to Services
-            </a>
+    <div class="services-split-container">
+        <!-- LEFT SIDE - Service Detail View -->
+        <div class="service-detail-view" id="serviceDetailView">
             <div class="service-detail-image">
-                <img id="detailImage" src="" alt="Service Detail">
+                <img id="detailImage" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Service Detail">
             </div>
-            <p class="service-detail-desc" id="detailDesc"></p>
-            <div class="did-you-know">
-                <h4 id="didYouKnowTitle">Did you know:</h4>
-                <p id="didYouKnowText"></p>
+            <div class="service-detail-content">
+                <h3 id="detailTitle">WOF - <span>WARRANT OF FITNESS</span></h3>
+                <p class="service-detail-desc" id="detailDesc">
+                    A warrant of fitness (WoF) is a regular check to ensure that your vehicle meets required safety standards. Our certified inspectors thoroughly check all safety aspects including brakes, tyres, lights, steering, and structural integrity. We provide quick and efficient service to get you back on the road safely.
+                </p>
+                
+                <ul class="service-features-detail" id="detailFeatures">
+                    <li><i class="fas fa-check-circle"></i> Certified Inspectors</li>
+                    <li><i class="fas fa-check-circle"></i> Quick Turnaround</li>
+                    <li><i class="fas fa-check-circle"></i> All Vehicle Types</li>
+                    <li><i class="fas fa-check-circle"></i> Safety Report</li>
+                </ul>
+                
+                <div class="did-you-know-box">
+                    <h4><i class="fas fa-lightbulb"></i> Did you know?</h4>
+                    <p id="didYouKnowText">
+                        Your vehicle must have a current WoF to be legally driven on the road. Driving without a valid WoF can result in fines and insurance issues. We recommend checking your WoF expiry date regularly.
+                    </p>
+                </div>
             </div>
         </div>
         
-        <div class="service-detail-right">
-            <div class="services-list-box">
-                <h3>Services List</h3>
-                <ul class="service-list">
-                    <li><a href="#" onclick="selectService(0); return false;" id="list-0">WOF - Warrant of Fitness</a></li>
-                    <li><a href="#" onclick="selectService(1); return false;" id="list-1">Engine Repair & Rebuilding</a></li>
-                    <li><a href="#" onclick="selectService(2); return false;" id="list-2">Brake & Clutch Service</a></li>
-                    <li><a href="#" onclick="selectService(3); return false;" id="list-3">Radiator Repairs & Cooling</a></li>
-                    <li><a href="#" onclick="selectService(4); return false;" id="list-4">Gearbox & Transmission</a></li>
-                    <li><a href="#" onclick="selectService(5); return false;" id="list-5">Fleet Servicing</a></li>
-                    <li><a href="#" onclick="selectService(6); return false;" id="list-6">Engine Diagnostics</a></li>
-                    <li><a href="#" onclick="selectService(7); return false;" id="list-7">Exhaust Fitting</a></li>
-                    <li><a href="#" onclick="selectService(8); return false;" id="list-8">Tyre Fitting & Repairs</a></li>
-                </ul>
+        <!-- RIGHT SIDE - Service List Sidebar -->
+        <div class="service-sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-list"></i> Services</h3>
             </div>
-            
-            <div class="quick-contact">
-                <h3>Quick Contact</h3>
-                <input type="email" placeholder="Your Email">
-                <textarea rows="3" placeholder="Your Message"></textarea>
-                <button type="button">Send Message</button>
-            </div>
+            <ul class="service-list-nav" id="serviceListNav">
+                <li>
+                    <button class="active" onclick="selectService(0)" data-index="0">
+                        <i class="fas fa-certificate"></i>
+                        WOF - Warrant of Fitness
+                    </button>
+                </li>
+                <li>
+                    <button onclick="selectService(1)" data-index="1">
+                        <i class="fas fa-engine"></i>
+                        Engine Repair & Rebuilding
+                    </button>
+                </li>
+                <li>
+                    <button onclick="selectService(2)" data-index="2">
+                        <i class="fas fa-car-crash"></i>
+                        Brake & Clutch Service
+                    </button>
+                </li>
+                <li>
+                    <button onclick="selectService(3)" data-index="3">
+                        <i class="fas fa-temperature-high"></i>
+                        Radiator & Cooling System
+                    </button>
+                </li>
+                <li>
+                    <button onclick="selectService(4)" data-index="4">
+                        <i class="fas fa-cogs"></i>
+                        Gearbox & Transmission
+                    </button>
+                </li>
+                <li>
+                    <button onclick="selectService(5)" data-index="5">
+                        <i class="fas fa-truck-fleet"></i>
+                        Fleet Servicing
+                    </button>
+                </li>
+                <li>
+                    <button onclick="selectService(6)" data-index="6">
+                        <i class="fas fa-microchip"></i>
+                        Engine Diagnostics
+                    </button>
+                </li>
+                <li>
+                    <button onclick="selectService(7)" data-index="7">
+                        <i class="fas fa-wind"></i>
+                        Exhaust Fitting & Service
+                    </button>
+                </li>
+                <li>
+                    <button onclick="selectService(8)" data-index="8">
+                        <i class="fas fa-circle"></i>
+                        Tyre Fitting & Repairs
+                    </button>
+                </li>
+            </ul>
+            <button class="sidebar-book-btn" onclick="openBookingModal()">
+                <i class="fas fa-calendar-check"></i> Book This Service
+            </button>
         </div>
     </div>
 </section>
@@ -1758,43 +1784,43 @@ footer p:nth-child(3){animation-delay:0.6s;}
     <h2>Our Work</h2>
     
     <div class="gallery-grid">
-        <a href="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 " target="_blank" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Work 1">
+        <a href="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Work 1">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 " target="_blank" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Work 2">
+        <a href="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Work 2">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 " target="_blank" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Work 3">
+        <a href="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Work 3">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 " target="_blank" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Work 4">
+        <a href="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Work 4">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 " target="_blank" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Work 5">
+        <a href="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Work 5">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80 " target="_blank" class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 " alt="Work 6">
+        <a href="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Work 6">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
@@ -1809,7 +1835,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
     <div class="location-content">
         <div class="location-left">
            <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.6868044614134!2d175.2653776748476!3d-37.82080437197384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d6d21de1ba5b1b3%3A0xdb91d6bc13377cdb!2s154%20Collins%20Road%2C%20Melville%2C%20Hamilton%203206%2C%20New%20Zealand!5e0!3m2!1sen!2slk!4v1772624744958!5m2!1sen!2slk" 
+    <iframe src="https://www.google.com/maps/embed?pb= !1m18!1m12!1m3!1d3151.6868044614134!2d175.2653776748476!3d-37.82080437197384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d6d21de1ba5b1b3%3A0xdb91d6bc13377cdb!2s154%20Collins%20Road%2C%20Melville%2C%20Hamilton%203206%2C%20New%20Zealand!5e0!3m2!1sen!2slk!4v1772624744958!5m2!1sen!2slk" 
         width="100%" 
         height="350" 
         style="border:0;" 
@@ -1843,7 +1869,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
     </div>
                     </li>
                 </ul>
-                <a href="https://www.google.com/maps/dir//154+Collins+Road,+Melville,+Hamilton+3206" target="_blank" class="directions-btn">
+                <a href="https://www.google.com/maps/dir//154+Collins+Road ,+Melville,+Hamilton+3206" target="_blank" class="directions-btn">
     <i class="fas fa-directions"></i> Get Directions
 </a>
             </div>
@@ -2058,100 +2084,106 @@ function submitBooking(event) {
 // Service Data
 const serviceData = [
     {
-        image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
-        title: 'WOF - Warrant of Fitness',
-        desc: 'A warrant of fitness (WoF) is a regular check to ensure that your vehicle meets required safety standards. Our certified inspectors thoroughly check all safety aspects including brakes, tyres, lights, steering, and structural integrity.',
-        didYouKnowTitle: 'Did you know: WOF',
-        didYouKnowText: 'Your vehicle must have a current WoF to be legally driven on the road. Driving without a valid WoF can result in fines and insurance issues.'
+        image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
+        title: 'WOF - <span>WARRANT OF FITNESS</span>',
+        desc: 'A warrant of fitness (WoF) is a regular check to ensure that your vehicle meets required safety standards. Our certified inspectors thoroughly check all safety aspects including brakes, tyres, lights, steering, and structural integrity. We provide quick and efficient service to get you back on the road safely.',
+        features: ['Certified Inspectors', 'Quick Turnaround', 'All Vehicle Types', 'Safety Report'],
+        didYouKnow: 'Your vehicle must have a current WoF to be legally driven on the road. Driving without a valid WoF can result in fines and insurance issues. We recommend checking your WoF expiry date regularly.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
-        title: 'Engine Repair & Rebuilding',
-        desc: 'Our trained mechanics are fully qualified to advise, handle minor and major engine repairs, including Engine Rebuilding and Engine Reconditioning with guaranteed quality. We use state-of-the-art equipment and genuine parts.',
-        didYouKnowTitle: 'Did you know: Engine',
-        didYouKnowText: 'Regular oil changes and maintenance can extend your engine life by over 100,000 kilometers. Prevention is always cheaper than repair.'
+        image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
+        title: 'ENGINE REPAIR & <span>REBUILDING</span>',
+        desc: 'Our trained mechanics are fully qualified to advise, handle minor and major engine repairs, including Engine Rebuilding and Engine Reconditioning with guaranteed quality. We use state-of-the-art equipment and genuine parts to ensure your engine runs like new.',
+        features: ['Full Diagnostics', 'Genuine Parts', 'Warranty Included', 'Expert Technicians'],
+        didYouKnow: 'Regular oil changes and maintenance can extend your engine life by over 100,000 kilometers. Prevention is always cheaper than repair.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
-        title: 'Brake & Clutch Service',
-        desc: 'Includes System Checks, Machining of Discs, Drums & Flywheel. Brake shoe & pad replacement, Clutch overhauls & Hydraulic repairs. We ensure your safety with every brake service.',
-        didYouKnowTitle: 'Did you know: Brakes',
-        didYouKnowText: 'If your brakes are squealing, pulling the vehicle to one side or making your steering wheel shake, then it\'s time to have them checked immediately.'
+        image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
+        title: 'BRAKE & <span>CLUTCH SERVICE</span>',
+        desc: 'Includes System Checks, Machining of Discs, Drums & Flywheel. Brake shoe & pad replacement, Clutch overhauls & Hydraulic repairs. We ensure your safety with every brake service, using only quality parts.',
+        features: ['Safety First', 'Quality Parts', 'Expert Fitting', 'Full Inspection'],
+        didYouKnow: 'If your brakes are squealing, pulling the vehicle to one side or making your steering wheel shake, then it\'s time to have them checked immediately.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
-        title: 'Radiator Repairs & Cooling System Service',
-        desc: 'Complete cooling system diagnostics and repairs. We handle radiator leaks, thermostat replacements, water pump repairs, and coolant flushes to prevent overheating.',
-        didYouKnowTitle: 'Did you know: Cooling',
-        didYouKnowText: 'Overheating is the leading cause of engine damage. Regular coolant checks can prevent costly repairs.'
+        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
+        title: 'RADIATOR REPAIRS & <span>COOLING SYSTEM</span>',
+        desc: 'Complete cooling system diagnostics and repairs. We handle radiator leaks, thermostat replacements, water pump repairs, and coolant flushes to prevent overheating and keep your engine at optimal temperature.',
+        features: ['Leak Detection', 'System Flush', 'Prevent Overheating', 'Coolant Replacement'],
+        didYouKnow: 'Overheating is the leading cause of engine damage. Regular coolant checks can prevent costly repairs and extend engine life.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
-        title: 'Gearbox & Transmission Service',
-        desc: 'Complete transmission services including repairs, rebuilds, and fluid changes. We handle both manual and automatic transmissions with expert care and precision.',
-        didYouKnowTitle: 'Did you know: Transmission',
-        didYouKnowText: 'Regular transmission fluid changes can prevent 90% of transmission failures. Don\'t ignore strange noises or delayed shifting.'
+        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
+        title: 'GEARBOX & <span>TRANSMISSION</span>',
+        desc: 'Complete transmission services including repairs, rebuilds, and fluid changes. We handle both manual and automatic transmissions with expert care and precision to ensure smooth shifting and long life.',
+        features: ['All Transmissions', 'Fluid Changes', 'Smooth Shifting', 'Expert Rebuilds'],
+        didYouKnow: 'Regular transmission fluid changes can prevent 90% of transmission failures. Don\'t ignore strange noises or delayed shifting.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
-        title: 'Fleet Servicing & Fleet Maintenance',
-        desc: 'Processes that are completely focused on professional automotive maintenance and repair conducted with highly efficient speed and delivery of service for your fleet.',
-        didYouKnowTitle: 'Did you know: Fleet',
-        didYouKnowText: 'Regular fleet maintenance reduces downtime by up to 40% and extends vehicle lifespan significantly.'
+        image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
+        title: 'FLEET <span>SERVICING</span>',
+        desc: 'Processes that are completely focused on professional automotive maintenance and repair conducted with highly efficient speed and delivery of service for your fleet. We help keep your business moving.',
+        features: ['Business Accounts', 'Scheduled Maintenance', 'Priority Service', 'Reduced Downtime'],
+        didYouKnow: 'Regular fleet maintenance reduces downtime by up to 40% and extends vehicle lifespan significantly. We offer customized maintenance schedules.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
-        title: 'Engine Diagnostics & Tune-Ups',
-        desc: 'Advanced computer diagnostics to identify and fix issues quickly. Our state-of-the-art equipment ensures accurate problem detection every time.',
-        didYouKnowTitle: 'Did you know: Diagnostics',
-        didYouKnowText: 'Modern vehicles have over 50 sensors. Our diagnostic tools can read all of them to pinpoint issues instantly.'
+        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
+        title: 'ENGINE <span>DIAGNOSTICS</span>',
+        desc: 'Advanced computer diagnostics to identify and fix issues quickly. Our state-of-the-art equipment ensures accurate problem detection every time, saving you time and money on repairs.',
+        features: ['Computer Scanning', 'Accurate Results', 'Quick Diagnosis', 'Modern Equipment'],
+        didYouKnow: 'Modern vehicles have over 50 sensors. Our diagnostic tools can read all of them to pinpoint issues instantly and accurately.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
-        title: 'Exhaust Fitting & Service',
-        desc: 'Complete exhaust system repairs and replacements. From mufflers to catalytic converters, we keep your vehicle running clean and quiet.',
-        didYouKnowTitle: 'Did you know: Exhaust',
-        didYouKnowText: 'A faulty exhaust system can reduce fuel efficiency by up to 15% and increase harmful emissions.'
+        image: 'https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
+        title: 'EXHAUST <span>FITTING & SERVICE</span>',
+        desc: 'Complete exhaust system repairs and replacements. From mufflers to catalytic converters, we keep your vehicle running clean and quiet while meeting all emission standards.',
+        features: ['System Repairs', 'Muffler Replacement', 'Emission Control', 'Catalytic Converters'],
+        didYouKnow: 'A faulty exhaust system can reduce fuel efficiency by up to 15% and increase harmful emissions. Regular checks are recommended.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1578844251758-2f71da64c96f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 ',
-        title: 'Tyre Fitting & Repairs',
-        desc: 'Professional tyre fitting, balancing, and repairs. We stock all major brands and offer wheel alignment services for optimal safety and performance.',
-        didYouKnowTitle: 'Did you know: Tyres',
-        didYouKnowText: 'Under-inflated tyres can reduce fuel economy by 3% and increase wear by 25%. Check your tyre pressure monthly.'
+        image: 'https://images.unsplash.com/photo-1578844251758-2f71da64c96f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
+        title: 'TYRE FITTING & <span>REPAIRS</span>',
+        desc: 'Professional tyre fitting, balancing, and repairs. We stock all major brands and offer wheel alignment services for optimal safety and performance on the road.',
+        features: ['All Major Brands', 'Wheel Alignment', 'Puncture Repairs', 'Balancing'],
+        didYouKnow: 'Under-inflated tyres can reduce fuel economy by 3% and increase wear by 25%. Check your tyre pressure monthly for best results.'
     }
 ];
 
-// Show Service Detail
-function showServiceDetail(index) {
-    document.getElementById('featuredServices').style.display = 'none';
-    document.getElementById('detailedView').classList.add('active');
-    selectService(index);
-    document.getElementById('services').scrollIntoView({behavior: 'smooth'});
-}
-
-// Back to Services
-function backToServices() {
-    document.getElementById('detailedView').classList.remove('active');
-    document.getElementById('featuredServices').style.display = 'grid';
-    document.getElementById('services').scrollIntoView({behavior: 'smooth'});
-}
-
-// Select Service from List
+// Select Service Function
 function selectService(index) {
-    document.querySelectorAll('.service-list a').forEach((a, i) => {
-        if (i === index) a.classList.add('active');
-        else a.classList.remove('active');
+    const service = serviceData[index];
+    
+    // Update detail view
+    document.getElementById('detailImage').src = service.image;
+    document.getElementById('detailTitle').innerHTML = service.title;
+    document.getElementById('detailDesc').textContent = service.desc;
+    document.getElementById('didYouKnowText').textContent = service.didYouKnow;
+    
+    // Update features list
+    const featuresList = document.getElementById('detailFeatures');
+    featuresList.innerHTML = '';
+    service.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.innerHTML = `<i class="fas fa-check-circle"></i> ${feature}`;
+        featuresList.appendChild(li);
     });
     
-    const service = serviceData[index];
-    document.getElementById('detailImage').src = service.image;
-    document.getElementById('detailDesc').textContent = service.desc;
-    document.getElementById('didYouKnowTitle').textContent = service.didYouKnowTitle;
-    document.getElementById('didYouKnowText').textContent = service.didYouKnowText;
+    // Update active state in sidebar
+    document.querySelectorAll('.service-list-nav button').forEach((btn, i) => {
+        if (i === index) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    // Update booking dropdown if modal is open
+    const bookingSelect = document.getElementById('bookingService');
+    if (bookingSelect) {
+        bookingSelect.selectedIndex = index + 1;
+    }
 }
 
-// Intersection Observer
+// Intersection Observer for scroll animations
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -2160,11 +2192,12 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, {threshold: 0.15});
 
-document.querySelectorAll('#about, .service-card, .location-section, .gallery-section').forEach(el => {
+// Observe sections
+document.querySelectorAll('#about, .location-section, .gallery-section').forEach(el => {
     observer.observe(el);
 });
 
-// Smooth scroll for desktop
+// Smooth scroll for desktop navigation
 document.querySelectorAll('.desktop-nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -2178,14 +2211,3 @@ document.querySelectorAll('.desktop-nav a[href^="#"]').forEach(anchor => {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
