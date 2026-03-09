@@ -5,55 +5,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Qulifix Automotive | Car Repair & Auto Service Hamilton</title>
+<title>Qulifix Automotive | Car Repair & Auto Service</title>
 
-<meta name="description" content="Qulifix Automotive provides professional car repair, vehicle maintenance, WOF inspections and auto services in Hamilton, New Zealand.">
-
-<!-- SEO Meta Tags -->
-<meta name="keywords" content="car repair Hamilton, auto service, WOF, warrant of fitness, mechanic Hamilton, vehicle maintenance">
-<meta name="author" content="Qulifix Automotive">
-<meta name="robots" content="index, follow">
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="business.business">
-<meta property="og:url" content="https://www.qulifixautomotive.co.nz">
-<meta property="og:title" content="Qulifix Automotive | Professional Car Repair Hamilton">
-<meta property="og:description" content="Expert car repair, WOF inspections & auto services in Hamilton. 20+ years experience. Free pick-up & drop-off.">
-<meta property="og:image" content="logo.png">
-<meta property="og:locale" content="en_NZ">
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://www.qulifixautomotive.co.nz">
-<meta property="twitter:title" content="Qulifix Automotive | Professional Car Repair Hamilton">
-<meta property="twitter:description" content="Expert car repair, WOF inspections & auto services in Hamilton. 20+ years experience.">
-<meta property="twitter:image" content="logo.png">
-
-<!-- Schema.org LocalBusiness -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AutoRepair",
-  "name": "Qulifix Automotive",
-  "image": "logo.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "154 Collins Road, Melville",
-    "addressLocality": "Hamilton",
-    "postalCode": "3206",
-    "addressCountry": "NZ"
-  },
-  "telephone": "+64-21-0601-646",
-  "email": "info@qulifixautomotive.co.nz",
-  "url": "https://www.qulifixautomotive.co.nz",
-  "openingHours": ["Mo-Sa 08:00-17:00"],
-  "priceRange": "$$"
-}
-</script>
+<meta name="description" content="Qulifix Automotive provides professional car repair, vehicle maintenance and auto services.">
 
 <meta name="google-site-verification" content="-sWOj7R08LkTg9ydyiP-tZgtFMl8jeqE4k3jiFE5VTA" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css ">
 
 <style>
 /* ================= THEME VARIABLES - WHITE & RED ================= */
@@ -77,29 +35,13 @@
 
 /* ================= GLOBAL ================= */
 *{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
 body{
     font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
     background:var(--off-white);
     color:var(--text);
     line-height:1.6;
+    scroll-behavior:smooth;
     overflow-x:hidden;
-}
-
-/* Skip to content link for accessibility */
-.skip-link{
-    position:absolute;
-    top:-40px;
-    left:0;
-    background:var(--primary);
-    color:var(--white);
-    padding:8px;
-    text-decoration:none;
-    z-index:9999;
-    transition:top 0.3s;
-}
-.skip-link:focus{
-    top:0;
 }
 
 /* ================= HEADER ================= */
@@ -138,7 +80,6 @@ header img{
     padding:8px;
     z-index:1002;
     transition:all 0.3s;
-    aria-label:"Toggle navigation menu";
 }
 
 /* CONTACT IN HEADER - RIGHT SIDE */
@@ -260,7 +201,6 @@ header img{
     box-shadow:var(--shadow);
     border:none;
     cursor:pointer;
-    aria-label:"Book appointment";
 }
 .booking-btn-header:hover{
     background:var(--primary-dark);
@@ -305,7 +245,6 @@ header img{
     transition:all 0.3s;
     border:none;
     cursor:pointer;
-    aria-label:"Book appointment";
 }
 .floating-booking-btn:hover{
     background:var(--primary-dark);
@@ -449,8 +388,6 @@ header img{
     text-align:center;
     border-radius:8px;
     transition:all 0.3s;
-    border:none;
-    cursor:pointer;
 }
 .mobile-nav .booking-nav-btn:hover{
     background:var(--primary-dark);
@@ -549,7 +486,6 @@ header img{
     background:rgba(255,255,255,0.5);
     cursor:pointer;
     transition:all 0.3s;
-    aria-label:"Go to slide";
 }
 .slider-dot.active{
     background:var(--primary);
@@ -861,72 +797,6 @@ header img{
 #about strong{
     color:var(--primary);
     font-weight:600;
-}
-
-/* About container styles */
-.about-container{
-    max-width:1000px;
-    margin:0 auto;
-}
-.about-header{
-    margin-bottom:40px;
-}
-.about-subtitle{
-    font-size:1.2rem;
-    color:var(--text-light);
-    margin-top:10px;
-}
-.about-content{
-    display:flex;
-    flex-direction:column;
-    gap:30px;
-}
-.about-intro{
-    font-size:1.1rem;
-    line-height:1.8;
-}
-.about-features-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-    gap:25px;
-    margin:30px 0;
-}
-.about-feature-card{
-    background:var(--white);
-    padding:30px;
-    border-radius:16px;
-    box-shadow:var(--shadow);
-    transition:transform 0.3s, box-shadow 0.3s;
-}
-.about-feature-card:hover{
-    transform:translateY(-5px);
-    box-shadow:var(--shadow-hover);
-}
-.feature-icon{
-    width:60px;
-    height:60px;
-    background:var(--primary);
-    color:var(--white);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:1.5rem;
-    margin:0 auto 15px;
-}
-.about-feature-card h3{
-    font-size:1.2rem;
-    margin-bottom:10px;
-    color:var(--text);
-}
-.about-feature-card p{
-    font-size:0.95rem;
-    color:var(--text-light);
-    line-height:1.6;
-}
-.about-closing{
-    font-size:1.1rem;
-    margin-top:20px;
 }
 
 /* ================= GALLERY SECTION ================= */
@@ -1287,7 +1157,6 @@ header img{
     align-items:center;
     justify-content:center;
     transition:all 0.3s;
-    aria-label:"Close booking modal";
 }
 .booking-close-btn:hover{
     background:rgba(255,255,255,0.2);
@@ -1342,32 +1211,10 @@ header img{
     justify-content:center;
     gap:10px;
 }
-.booking-submit-btn:hover:not(:disabled){
+.booking-submit-btn:hover{
     background:var(--primary-dark);
     transform:translateY(-2px);
     box-shadow:var(--shadow-hover);
-}
-.booking-submit-btn:disabled{
-    opacity:0.7;
-    cursor:not-allowed;
-}
-.booking-submit-btn .spinner{
-    display:none;
-    width:20px;
-    height:20px;
-    border:2px solid var(--white);
-    border-top-color:transparent;
-    border-radius:50%;
-    animation:spin 1s linear infinite;
-}
-.booking-submit-btn.loading .spinner{
-    display:inline-block;
-}
-.booking-submit-btn.loading .btn-text{
-    display:none;
-}
-@keyframes spin{
-    to{transform:rotate(360deg);}
 }
 
 /* ================= FOOTER ================= */
@@ -1704,48 +1551,24 @@ footer p:nth-child(3){animation-delay:0.6s;}
         font-size:0.85rem;
     }
 }
-
-/* Print styles */
-@media print{
-    .mobile-menu-toggle,
-    .floating-booking-btn,
-    .booking-btn-header,
-    .sidebar-book-btn,
-    .mobile-nav,
-    .mobile-contact-btn{
-        display:none !important;
-    }
-    .hero-slider{
-        height:300px;
-    }
-    .service-sidebar{
-        display:none;
-    }
-    .services-split-container{
-        grid-template-columns:1fr;
-    }
-}
 </style>
 <base target="_blank">
 </head>
 
 <body>
 
-<!-- Skip to content link for accessibility -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
 <!-- HEADER -->
 <header>
     <div class="header-left">
-        <img src="logo.png" alt="Qulifix Automotive Logo - Car Repair Hamilton">
+        <img src="logo.png" alt="qulifix automotive Logo">
     </div>
     
     <div style="display:flex;align-items:center;gap:10px;">
-        <div class="location-item-header" onclick="document.getElementById('location').scrollIntoView({behavior:'smooth'})" role="button" tabindex="0" aria-label="View location">
+        <div class="location-item-header" onclick="document.getElementById('location').scrollIntoView({behavior:'smooth'})">
             <i class="fas fa-map-marker-alt"></i>
             <div>
                 <small>Location</small>
-                <strong>Hamilton, NZ</strong>
+                <strong>Auckland</strong>
             </div>
         </div>
         
@@ -1754,7 +1577,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
                 <i class="fas fa-phone-alt"></i>
                 <div>
                     <small>Call Us</small>
-                    <a href="tel:+64210601646"><strong>021 0601 646</strong></a>
+                    <a href="tel:0210601646"><strong>021 0601 646</strong></a>
                 </div>
             </div>
             <div class="contact-info-item">
@@ -1767,11 +1590,11 @@ footer p:nth-child(3){animation-delay:0.6s;}
         </div>
         
         <!-- BOOKING BUTTON IN HEADER -->
-        <button class="booking-btn-header" onclick="openBookingModal()" aria-label="Book appointment now">
+        <button class="booking-btn-header" onclick="openBookingModal()">
             <i class="fas fa-calendar-check"></i> Book Now
         </button>
         
-        <a href="tel:+64210601646" class="mobile-contact-btn" aria-label="Call us">
+        <a href="tel:0210601646" class="mobile-contact-btn">
             <i class="fas fa-phone"></i> Call
         </a>
         
@@ -1785,7 +1608,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
 <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
 <!-- MOBILE NAVIGATION -->
-<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+<nav class="mobile-nav" id="mobileNav">
     <ul>
         <li><a href="#home" class="mobile-nav-link">Home</a></li>
         <li><a href="#about" class="mobile-nav-link">About Us</a></li>
@@ -1794,18 +1617,18 @@ footer p:nth-child(3){animation-delay:0.6s;}
         <li><a href="#location" class="mobile-nav-link">Location</a></li>
     </ul>
     <!-- BOOKING BUTTON IN MOBILE NAV -->
-    <button class="booking-nav-btn" onclick="openBookingModal(); closeMobileMenu();" aria-label="Book appointment">
+    <button class="booking-nav-btn" onclick="openBookingModal(); closeMobileMenu();">
         <i class="fas fa-calendar-check"></i> Book Appointment
     </button>
 </nav>
 
 <!-- FLOATING BOOKING BUTTON FOR MOBILE -->
-<button class="floating-booking-btn" onclick="openBookingModal()" aria-label="Book appointment">
+<button class="floating-booking-btn" onclick="openBookingModal()">
     <i class="fas fa-calendar-check"></i> Book Now
 </button>
 
 <!-- DESKTOP NAVIGATION -->
-<nav class="desktop-nav" aria-label="Main navigation">
+<nav class="desktop-nav">
     <div class="nav-container">
         <ul>
             <li><a href="#home">Home</a></li>
@@ -1817,50 +1640,48 @@ footer p:nth-child(3){animation-delay:0.6s;}
     </div>
 </nav>
 
-<main id="main-content">
-
 <!-- HERO SLIDER -->
-<div class="hero-slider" id="home" aria-label="Image slider">
-    <div class="hero-slide active" style="background:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
+<div class="hero-slider" id="home">
+    <div class="hero-slide active" style="background:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  ') center/cover no-repeat;">
         <div>
             <h2>Your One Stop <span>Automotive</span><br>Repair Shop</h2>
             <p>Dealer standard service without paying dealer premium prices. Expert care for your vehicle.</p>
-            <a href="tel:+64210601646" aria-label="Call us now">Call Now</a>
+            <a href="tel:0210601646">Call Now</a>
         </div>
     </div>
     
-    <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
+    <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  ') center/cover no-repeat;">
         <div>
             <h2>Professional <span>WOF</span> Inspections</h2>
             <p>Get your Warrant of Fitness done quickly and efficiently by our certified inspectors.</p>
-            <a href="#services" aria-label="View our services">Our Services</a>
+            <a href="#services">Our Services</a>
         </div>
     </div>
     
-    <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
+    <div class="hero-slide" style="background:url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  ') center/cover no-repeat;">
         <div>
             <h2>Expert <span>Engine</span> Repairs</h2>
             <p>From diagnostics to complete rebuilds, our skilled technicians handle it all.</p>
-            <a href="#contact" onclick="openBookingModal(); return false;" aria-label="Book now">Book Now</a>
+            <a href="#contact">Book Now</a>
         </div>
     </div>
     
-    <div class="slider-dots" role="tablist" aria-label="Slider navigation">
-        <div class="slider-dot active" onclick="goToSlide(0)" role="tab" aria-label="Slide 1" aria-selected="true"></div>
-        <div class="slider-dot" onclick="goToSlide(1)" role="tab" aria-label="Slide 2" aria-selected="false"></div>
-        <div class="slider-dot" onclick="goToSlide(2)" role="tab" aria-label="Slide 3" aria-selected="false"></div>
+    <div class="slider-dots">
+        <div class="slider-dot active" onclick="goToSlide(0)"></div>
+        <div class="slider-dot" onclick="goToSlide(1)"></div>
+        <div class="slider-dot" onclick="goToSlide(2)"></div>
     </div>
 </div>
 
 <!-- SERVICES SECTION - SPLIT LAYOUT -->
-<section class="services-section" id="services" aria-labelledby="services-heading">
-    <h2 id="services-heading">Our Services</h2>
+<section class="services-section" id="services">
+    <h2>Our Services</h2>
     
     <div class="services-split-container">
         <!-- LEFT SIDE - Service Detail View -->
         <div class="service-detail-view" id="serviceDetailView">
             <div class="service-detail-image">
-                <img id="detailImage" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="WOF Inspection Service" loading="lazy">
+                <img id="detailImage" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Service Detail">
             </div>
             <div class="service-detail-content">
                 <h3 id="detailTitle">WOF - <span>WARRANT OF FITNESS</span></h3>
@@ -1889,63 +1710,63 @@ footer p:nth-child(3){animation-delay:0.6s;}
             <div class="sidebar-header">
                 <h3><i class="fas fa-list"></i> Services</h3>
             </div>
-            <ul class="service-list-nav" id="serviceListNav" role="tablist" aria-label="Service selection">
+            <ul class="service-list-nav" id="serviceListNav">
                 <li>
-                    <button class="active" onclick="selectService(0)" data-index="0" role="tab" aria-selected="true" aria-label="WOF Warrant of Fitness">
+                    <button class="active" onclick="selectService(0)" data-index="0">
                         <i class="fas fa-certificate"></i>
                         WOF - Warrant of Fitness
                     </button>
                 </li>
                 <li>
-                    <button onclick="selectService(1)" data-index="1" role="tab" aria-selected="false" aria-label="Engine Repair and Rebuilding">
-                        <i class="fas fa-cog"></i>
+                    <button onclick="selectService(1)" data-index="1">
+                        <i class="fas fa-engine"></i>
                         Engine Repair & Rebuilding
                     </button>
                 </li>
                 <li>
-                    <button onclick="selectService(2)" data-index="2" role="tab" aria-selected="false" aria-label="Brake and Clutch Service">
+                    <button onclick="selectService(2)" data-index="2">
                         <i class="fas fa-car-crash"></i>
                         Brake & Clutch Service
                     </button>
                 </li>
                 <li>
-                    <button onclick="selectService(3)" data-index="3" role="tab" aria-selected="false" aria-label="Radiator and Cooling System">
+                    <button onclick="selectService(3)" data-index="3">
                         <i class="fas fa-temperature-high"></i>
                         Radiator & Cooling System
                     </button>
                 </li>
                 <li>
-                    <button onclick="selectService(4)" data-index="4" role="tab" aria-selected="false" aria-label="Gearbox and Transmission">
+                    <button onclick="selectService(4)" data-index="4">
                         <i class="fas fa-cogs"></i>
                         Gearbox & Transmission
                     </button>
                 </li>
                 <li>
-                    <button onclick="selectService(5)" data-index="5" role="tab" aria-selected="false" aria-label="Fleet Servicing">
-                        <i class="fas fa-truck-moving"></i>
+                    <button onclick="selectService(5)" data-index="5">
+                        <i class="fas fa-truck-fleet"></i>
                         Fleet Servicing
                     </button>
                 </li>
                 <li>
-                    <button onclick="selectService(6)" data-index="6" role="tab" aria-selected="false" aria-label="Engine Diagnostics">
+                    <button onclick="selectService(6)" data-index="6">
                         <i class="fas fa-microchip"></i>
                         Engine Diagnostics
                     </button>
                 </li>
                 <li>
-                    <button onclick="selectService(7)" data-index="7" role="tab" aria-selected="false" aria-label="Exhaust Fitting and Service">
+                    <button onclick="selectService(7)" data-index="7">
                         <i class="fas fa-wind"></i>
                         Exhaust Fitting & Service
                     </button>
                 </li>
                 <li>
-                    <button onclick="selectService(8)" data-index="8" role="tab" aria-selected="false" aria-label="Tyre Fitting and Repairs">
+                    <button onclick="selectService(8)" data-index="8">
                         <i class="fas fa-circle"></i>
                         Tyre Fitting & Repairs
                     </button>
                 </li>
             </ul>
-            <button class="sidebar-book-btn" onclick="openBookingModal()" aria-label="Book this service">
+            <button class="sidebar-book-btn" onclick="openBookingModal()">
                 <i class="fas fa-calendar-check"></i> Book This Service
             </button>
         </div>
@@ -1953,10 +1774,10 @@ footer p:nth-child(3){animation-delay:0.6s;}
 </section>
 
 <!-- ABOUT SECTION - NEW DESIGN -->
-<section id="about" aria-labelledby="about-heading">
+<section id="about">
     <div class="about-container">
         <div class="about-header">
-            <h2 id="about-heading">Welcome to Qulifix Automotive</h2>
+            <h2>Welcome to Qulifix Automotive</h2>
             <p class="about-subtitle">Expert Service You Can Trust</p>
         </div>
         
@@ -1999,47 +1820,47 @@ footer p:nth-child(3){animation-delay:0.6s;}
 </section>
 
 <!-- GALLERY SECTION -->
-<section class="gallery-section" id="gallery" aria-labelledby="gallery-heading">
-    <h2 id="gallery-heading">Our Work</h2>
+<section class="gallery-section" id="gallery">
+    <h2>Our Work</h2>
     
     <div class="gallery-grid">
-        <a href="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item" aria-label="View WOF inspection workshop image">
-            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional mechanic performing WOF safety inspection on vehicle" loading="lazy">
+        <a href="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Work 1">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item" aria-label="View engine repair workshop image">
-            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Engine repair and rebuilding service in progress" loading="lazy">
+        <a href="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Work 2">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item" aria-label="View classic car restoration image">
-            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Classic BMW restoration project at our Hamilton workshop" loading="lazy">
+        <a href="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Work 3">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item" aria-label="View car interior detailing image">
-            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vehicle interior detailing and cleaning service" loading="lazy">
+        <a href="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Work 4">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item" aria-label="View car engine bay image">
-            <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Engine bay inspection and maintenance service" loading="lazy">
+        <a href="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Work 5">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" target="_blank" class="gallery-item" aria-label="View sports car service image">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury sports car service and maintenance" loading="lazy">
+        <a href="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80  " target="_blank" class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  " alt="Work 6">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
@@ -2048,8 +1869,8 @@ footer p:nth-child(3){animation-delay:0.6s;}
 </section>
 
 <!-- LOCATION SECTION -->
-<section class="location-section" id="location" aria-labelledby="location-heading">
-    <h2 id="location-heading">Find Us & Working Hours</h2>
+<section class="location-section" id="location">
+    <h2>Find Us & Working Hours</h2>
     
     <div class="location-content">
         <div class="location-left">
@@ -2060,9 +1881,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
                     style="border:0;" 
                     allowfullscreen="" 
                     loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Qulifix Automotive Location Map"
-                    aria-label="Google Maps showing our location at 154 Collins Road, Melville, Hamilton">
+                    referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
             
@@ -2080,7 +1899,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
                     <li>
                         <i class="fas fa-phone-alt"></i>
                         <div>
-                            <strong>Phone:</strong> <a href="tel:+64210601646">021 0601 646</a>
+                            <strong>Phone:</strong> <a href="tel:0210601646">021 0601 646</a>
                         </div>
                     </li>
                     <li>
@@ -2090,7 +1909,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
                         </div>
                     </li>
                 </ul>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=154+Collins+Road,Melville,Hamilton+3206,New+Zealand" target="_blank" class="directions-btn" aria-label="Get directions to our workshop">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=154+Collins+Road,Melville,Hamilton+3206,New+Zealand" target="_blank" class="directions-btn">
                     <i class="fas fa-directions"></i> Get Directions
                 </a>
             </div>
@@ -2113,39 +1932,40 @@ footer p:nth-child(3){animation-delay:0.6s;}
     </div>
 </section>
 
-</main>
-
 <!-- FOOTER -->
 <footer>
-    <p>&copy; 2026 Qulifix Automotive. All Rights Reserved.</p>
-    <p>154 Collins Road, Melville, Hamilton 3206, New Zealand | 021 0601 646</p>
-    <p>Professional Automotive Care You Can Trust | WOF Inspections | Hamilton Mechanic</p>
+    <p>&copy; 2026 Reliable Auto Services. All Rights Reserved.</p>
+    <p>154 Collins Road, Melville, Hamilton 3206, New Zealand | 02 1060 1646</p>
+    <p>Professional Automotive Care You Can Trust</p>
 </footer>
 
 <!-- BOOKING MODAL -->
+<div class="booking-modal" id="bookingModal">
+    <div class="booking-modal-content">
+        <div class="booking-modal-header">
+            <button class="booking-close-btn" onclick="closeBookingModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3><i class="fas fa-calendar-check"></i> Book Appointment</h3>
+            <p>Schedule your vehicle service with us</p>
+        </div>
         <div class="booking-modal-body">
-            <form id="bookingForm" onsubmit="submitBooking(event)" novalidate>
+            <form id="bookingForm" onsubmit="submitBooking(event)">
                 <div class="booking-form-group">
                     <label for="bookingName"><i class="fas fa-user"></i> Your Name *</label>
-                    <input type="text" id="bookingName" name="name" placeholder="Enter your full name" required aria-required="true" minlength="2" autocomplete="name">
-                    <small class="error-message" id="nameError" style="color: var(--primary); display: none; font-size: 0.85rem; margin-top: 5px;">Please enter your name</small>
+                    <input type="text" id="bookingName" name="name" placeholder="Enter your full name" required>
                 </div>
-                
                 <div class="booking-form-group">
                     <label for="bookingPhone"><i class="fas fa-phone"></i> Phone Number *</label>
-                    <input type="tel" id="bookingPhone" name="phone" placeholder="021 0601 646" required aria-required="true" pattern="^(0\d{1,2}\s?\d{3,4}\s?\d{3,4}|\+\d{1,3}\s?\d{9,12})$" title="Enter valid NZ number: 021 0601 646 or +64 21 0601 646" autocomplete="tel">
-                    <small class="error-message" id="phoneError" style="color: var(--primary); display: none; font-size: 0.85rem; margin-top: 5px;">Please enter a valid phone number</small>
+                    <input type="tel" id="bookingPhone" name="phone" placeholder="Enter your phone number" required>
                 </div>
-                
                 <div class="booking-form-group">
                     <label for="bookingEmail"><i class="fas fa-envelope"></i> Email Address</label>
-                    <input type="email" id="bookingEmail" name="email" placeholder="your@email.com (optional)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" autocomplete="email">
-                    <small class="error-message" id="emailError" style="color: var(--primary); display: none; font-size: 0.85rem; margin-top: 5px;">Please enter a valid email</small>
+                    <input type="email" id="bookingEmail" name="email" placeholder="Enter your email (optional)">
                 </div>
-                
                 <div class="booking-form-group">
                     <label for="bookingService"><i class="fas fa-wrench"></i> Service Type *</label>
-                    <select id="bookingService" name="service" required aria-required="true">
+                    <select id="bookingService" name="service" required>
                         <option value="">Select a service</option>
                         <option value="wof">WOF - Warrant of Fitness</option>
                         <option value="engine">Engine Repair & Rebuilding</option>
@@ -2158,18 +1978,14 @@ footer p:nth-child(3){animation-delay:0.6s;}
                         <option value="tyre">Tyre Fitting & Repairs</option>
                         <option value="other">Other Service</option>
                     </select>
-                    <small class="error-message" id="serviceError" style="color: var(--primary); display: none; font-size: 0.85rem; margin-top: 5px;">Please select a service</small>
                 </div>
-                
                 <div class="booking-form-group">
                     <label for="bookingDate"><i class="fas fa-calendar"></i> Preferred Date *</label>
-                    <input type="date" id="bookingDate" name="date" required aria-required="true">
-                    <small class="error-message" id="dateError" style="color: var(--primary); display: none; font-size: 0.85rem; margin-top: 5px;">Please select a date</small>
+                    <input type="date" id="bookingDate" name="date" required>
                 </div>
-                
                 <div class="booking-form-group">
                     <label for="bookingTime"><i class="fas fa-clock"></i> Preferred Time *</label>
-                    <select id="bookingTime" name="time" required aria-required="true">
+                    <select id="bookingTime" name="time" required>
                         <option value="">Select a time</option>
                         <option value="8:00 AM">8:00 AM</option>
                         <option value="9:00 AM">9:00 AM</option>
@@ -2181,28 +1997,18 @@ footer p:nth-child(3){animation-delay:0.6s;}
                         <option value="3:00 PM">3:00 PM</option>
                         <option value="4:00 PM">4:00 PM</option>
                     </select>
-                    <small class="error-message" id="timeError" style="color: var(--primary); display: none; font-size: 0.85rem; margin-top: 5px;">Please select a time</small>
                 </div>
-                
                 <div class="booking-form-group">
                     <label for="bookingVehicle"><i class="fas fa-car"></i> Vehicle Details</label>
-                    <input type="text" id="bookingVehicle" name="vehicle" placeholder="e.g., 2018 Toyota Corolla, ABC123" autocomplete="off">
+                    <input type="text" id="bookingVehicle" name="vehicle" placeholder="e.g., 2018 Toyota Corolla">
                 </div>
-                
                 <div class="booking-form-group">
                     <label for="bookingNotes"><i class="fas fa-comment"></i> Additional Notes</label>
-                    <textarea id="bookingNotes" name="notes" placeholder="Describe any issues or special requests..." maxlength="500"></textarea>
-                    <small style="color: var(--text-light); font-size: 0.8rem; display: block; margin-top: 5px; text-align: right;"><span id="charCount">0</span>/500</small>
+                    <textarea id="bookingNotes" name="notes" placeholder="Any specific issues or requests..."></textarea>
                 </div>
-                
-                <button type="submit" class="booking-submit-btn" id="submitBtn">
-                    <span class="spinner"></span>
-                    <span class="btn-text"><i class="fas fa-paper-plane"></i> Submit Booking Request</span>
+                <button type="submit" class="booking-submit-btn">
+                    <i class="fas fa-paper-plane"></i> Submit Booking Request
                 </button>
-                
-                <p style="text-align: center; margin-top: 15px; font-size: 0.85rem; color: var(--text-light);">
-                    <i class="fas fa-shield-alt" style="color: var(--primary);"></i> Your information is secure and will never be shared
-                </p>
             </form>
         </div>
     </div>
@@ -2214,6 +2020,7 @@ const menuToggle = document.getElementById('menuToggle');
 const mobileNav = document.getElementById('mobileNav');
 const mobileNavOverlay = document.getElementById('mobileNavOverlay');
 const menuIcon = document.getElementById('menuIcon');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
 function openMobileMenu() {
     mobileNav.classList.add('active');
@@ -2241,7 +2048,7 @@ menuToggle.addEventListener('click', function() {
 
 mobileNavOverlay.addEventListener('click', closeMobileMenu);
 
-document.querySelectorAll('.mobile-nav-link').forEach(link => {
+mobileNavLinks.forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
@@ -2252,41 +2059,24 @@ document.querySelectorAll('.mobile-nav-link').forEach(link => {
     });
 });
 
-// Hero Slider with pause on hover
+// Hero Slider
 let currentSlide = 0;
 const slides = document.querySelectorAll('.hero-slide');
 const dots = document.querySelectorAll('.slider-dot');
-let slideInterval;
 
 function goToSlide(n) {
     slides[currentSlide].classList.remove('active');
     dots[currentSlide].classList.remove('active');
-    dots[currentSlide].setAttribute('aria-selected', 'false');
     currentSlide = n;
     slides[currentSlide].classList.add('active');
     dots[currentSlide].classList.add('active');
-    dots[currentSlide].setAttribute('aria-selected', 'true');
 }
 
 function nextSlide() {
     goToSlide((currentSlide + 1) % slides.length);
 }
 
-function startSlider() {
-    slideInterval = setInterval(nextSlide, 5000);
-}
-
-function stopSlider() {
-    clearInterval(slideInterval);
-}
-
-// Pause slider on hover
-const heroSlider = document.querySelector('.hero-slider');
-heroSlider.addEventListener('mouseenter', stopSlider);
-heroSlider.addEventListener('mouseleave', startSlider);
-heroSlider.addEventListener('touchstart', stopSlider, {passive: true});
-
-startSlider();
+setInterval(nextSlide, 5000);
 
 // Booking Modal Functions
 function openBookingModal() {
@@ -2296,221 +2086,101 @@ function openBookingModal() {
     // Set minimum date to today
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('bookingDate').setAttribute('min', today);
-    
-    // Focus first input for accessibility
-    setTimeout(() => document.getElementById('bookingName').focus(), 100);
 }
 
 function closeBookingModal() {
     document.getElementById('bookingModal').classList.remove('active');
     document.body.style.overflow = '';
-    resetForm();
-}
-
-function resetForm() {
-    document.getElementById('bookingForm').reset();
-    document.getElementById('charCount').textContent = '0';
-    hideAllErrors();
-    const submitBtn = document.getElementById('submitBtn');
-    submitBtn.disabled = false;
-    submitBtn.classList.remove('loading');
-}
-
-function hideAllErrors() {
-    document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
-}
-
-function showError(fieldId, show = true) {
-    const errorEl = document.getElementById(fieldId + 'Error');
-    if (errorEl) {
-        errorEl.style.display = show ? 'block' : 'none';
-    }
-}
-
-function validateForm() {
-    let isValid = true;
-    hideAllErrors();
-    
-    // Name validation
-    const name = document.getElementById('bookingName').value.trim();
-    if (name.length < 2) {
-        showError('name');
-        isValid = false;
-    }
-    
-    // Phone validation
-    const phone = document.getElementById('bookingPhone').value.trim();
-    const phonePattern = /^(0\d{1,2}\s?\d{3,4}\s?\d{3,4}|\+\d{1,3}\s?\d{9,12})$/;
-    if (!phonePattern.test(phone)) {
-        showError('phone');
-        isValid = false;
-    }
-    
-    // Email validation (optional but must be valid if provided)
-    const email = document.getElementById('bookingEmail').value.trim();
-    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        showError('email');
-        isValid = false;
-    }
-    
-    // Service validation
-    const service = document.getElementById('bookingService').value;
-    if (!service) {
-        showError('service');
-        isValid = false;
-    }
-    
-    // Date validation
-    const date = document.getElementById('bookingDate').value;
-    if (!date) {
-        showError('date');
-        isValid = false;
-    } else {
-        const selectedDate = new Date(date);
-        const today = new Date();
-        today.setHours(0,0,0,0);
-        if (selectedDate < today) {
-            showError('date');
-            isValid = false;
-        }
-    }
-    
-    // Time validation
-    const time = document.getElementById('bookingTime').value;
-    if (!time) {
-        showError('time');
-        isValid = false;
-    }
-    
-    return isValid;
 }
 
 function submitBooking(event) {
     event.preventDefault();
     
-    if (!validateForm()) {
-        // Shake animation for error feedback
-        const modalContent = document.querySelector('.booking-modal-content');
-        modalContent.style.animation = 'shake 0.5s';
-        setTimeout(() => modalContent.style.animation = '', 500);
-        return;
-    }
-    
-    const submitBtn = document.getElementById('submitBtn');
-    submitBtn.disabled = true;
-    submitBtn.classList.add('loading');
-    
     const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
+    const name = formData.get('name');
+    const service = formData.get('service');
+    const date = formData.get('date');
+    const time = formData.get('time');
     
-    // Get service name
+    // Get service name from select
     const serviceSelect = document.getElementById('bookingService');
     const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
     
-    // Simulate API call
-    setTimeout(() => {
-        console.log('Booking submitted:', {...data, serviceName});
-        
-        // Success message
-        alert(`Thank you ${data.name}!\n\nYour booking request has been received:\n• Service: ${serviceName}\n• Date: ${data.date}\n• Time: ${data.time}\n\nWe will contact you at ${data.phone} shortly to confirm your appointment.`);
-        
-        closeBookingModal();
-    }, 1500);
+    // Show confirmation alert
+    alert(`Thank you ${name}!\n\nYour booking request has been received:\n• Service: ${serviceName}\n• Date: ${date}\n• Time: ${time}\n\nWe will contact you shortly to confirm your appointment.`);
+    
+    // Close modal and reset form
+    closeBookingModal();
+    event.target.reset();
 }
 
 // Close modal when clicking outside
-document.getElementById('bookingModal').addEventListener('click', function(e) {
+ document.getElementById('bookingModal').addEventListener('click', function(e) {
     if (e.target === this) {
         closeBookingModal();
-    }
-});
-
-// Close modal on Escape key
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && document.getElementById('bookingModal').classList.contains('active')) {
-        closeBookingModal();
-    }
-});
-
-// Character count for notes
-document.getElementById('bookingNotes').addEventListener('input', function() {
-    document.getElementById('charCount').textContent = this.value.length;
-});
-
-// Real-time validation
-document.getElementById('bookingName').addEventListener('blur', function() {
-    if (this.value.trim().length >= 2) showError('name', false);
-});
-document.getElementById('bookingPhone').addEventListener('blur', function() {
-    const phonePattern = /^(0\d{1,2}\s?\d{3,4}\s?\d{3,4}|\+\d{1,3}\s?\d{9,12})$/;
-    if (phonePattern.test(this.value.trim())) showError('phone', false);
-});
-document.getElementById('bookingEmail').addEventListener('blur', function() {
-    if (!this.value || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value.trim())) {
-        showError('email', false);
     }
 });
 
 // Service Data
 const serviceData = [
     {
-        image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
         title: 'WOF - <span>WARRANT OF FITNESS</span>',
         desc: 'A warrant of fitness (WoF) is a regular check to ensure that your vehicle meets required safety standards. Our certified inspectors thoroughly check all safety aspects including brakes, tyres, lights, steering, and structural integrity. We provide quick and efficient service to get you back on the road safely.',
         features: ['Certified Inspectors', 'Quick Turnaround', 'All Vehicle Types', 'Safety Report'],
         didYouKnow: 'Your vehicle must have a current WoF to be legally driven on the road. Driving without a valid WoF can result in fines and insurance issues. We recommend checking your WoF expiry date regularly.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
         title: 'ENGINE REPAIR & <span>REBUILDING</span>',
         desc: 'Our trained mechanics are fully qualified to advise, handle minor and major engine repairs, including Engine Rebuilding and Engine Reconditioning with guaranteed quality. We use state-of-the-art equipment and genuine parts to ensure your engine runs like new.',
         features: ['Full Diagnostics', 'Genuine Parts', 'Warranty Included', 'Expert Technicians'],
         didYouKnow: 'Regular oil changes and maintenance can extend your engine life by over 100,000 kilometers. Prevention is always cheaper than repair.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
         title: 'BRAKE & <span>CLUTCH SERVICE</span>',
         desc: 'Includes System Checks, Machining of Discs, Drums & Flywheel. Brake shoe & pad replacement, Clutch overhauls & Hydraulic repairs. We ensure your safety with every brake service, using only quality parts.',
         features: ['Safety First', 'Quality Parts', 'Expert Fitting', 'Full Inspection'],
         didYouKnow: 'If your brakes are squealing, pulling the vehicle to one side or making your steering wheel shake, then it\'s time to have them checked immediately.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
         title: 'RADIATOR REPAIRS & <span>COOLING SYSTEM</span>',
         desc: 'Complete cooling system diagnostics and repairs. We handle radiator leaks, thermostat replacements, water pump repairs, and coolant flushes to prevent overheating and keep your engine at optimal temperature.',
         features: ['Leak Detection', 'System Flush', 'Prevent Overheating', 'Coolant Replacement'],
         didYouKnow: 'Overheating is the leading cause of engine damage. Regular coolant checks can prevent costly repairs and extend engine life.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
         title: 'GEARBOX & <span>TRANSMISSION</span>',
         desc: 'Complete transmission services including repairs, rebuilds, and fluid changes. We handle both manual and automatic transmissions with expert care and precision to ensure smooth shifting and long life.',
         features: ['All Transmissions', 'Fluid Changes', 'Smooth Shifting', 'Expert Rebuilds'],
         didYouKnow: 'Regular transmission fluid changes can prevent 90% of transmission failures. Don\'t ignore strange noises or delayed shifting.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
         title: 'FLEET <span>SERVICING</span>',
         desc: 'Processes that are completely focused on professional automotive maintenance and repair conducted with highly efficient speed and delivery of service for your fleet. We help keep your business moving.',
         features: ['Business Accounts', 'Scheduled Maintenance', 'Priority Service', 'Reduced Downtime'],
         didYouKnow: 'Regular fleet maintenance reduces downtime by up to 40% and extends vehicle lifespan significantly. We offer customized maintenance schedules.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
         title: 'ENGINE <span>DIAGNOSTICS</span>',
         desc: 'Advanced computer diagnostics to identify and fix issues quickly. Our state-of-the-art equipment ensures accurate problem detection every time, saving you time and money on repairs.',
         features: ['Computer Scanning', 'Accurate Results', 'Quick Diagnosis', 'Modern Equipment'],
         didYouKnow: 'Modern vehicles have over 50 sensors. Our diagnostic tools can read all of them to pinpoint issues instantly and accurately.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
         title: 'EXHAUST <span>FITTING & SERVICE</span>',
         desc: 'Complete exhaust system repairs and replacements. From mufflers to catalytic converters, we keep your vehicle running clean and quiet while meeting all emission standards.',
         features: ['System Repairs', 'Muffler Replacement', 'Emission Control', 'Catalytic Converters'],
         didYouKnow: 'A faulty exhaust system can reduce fuel efficiency by up to 15% and increase harmful emissions. Regular checks are recommended.'
     },
     {
-        image: 'https://images.unsplash.com/photo-1578844251758-2f71da64c96f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        image: 'https://images.unsplash.com/photo-1578844251758-2f71da64c96f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80  ',
         title: 'TYRE FITTING & <span>REPAIRS</span>',
         desc: 'Professional tyre fitting, balancing, and repairs. We stock all major brands and offer wheel alignment services for optimal safety and performance on the road.',
         features: ['All Major Brands', 'Wheel Alignment', 'Puncture Repairs', 'Balancing'],
@@ -2522,52 +2192,45 @@ const serviceData = [
 function selectService(index) {
     const service = serviceData[index];
     
-    // Update detail view with animation
-    const detailView = document.getElementById('serviceDetailView');
-    detailView.style.opacity = '0.5';
+    // Update detail view
+    document.getElementById('detailImage').src = service.image;
+    document.getElementById('detailTitle').innerHTML = service.title;
+    document.getElementById('detailDesc').textContent = service.desc;
+    document.getElementById('didYouKnowText').textContent = service.didYouKnow;
     
-    setTimeout(() => {
-        document.getElementById('detailImage').src = service.image;
-        document.getElementById('detailImage').alt = service.title.replace(/<[^>]*>/g, '') + ' Service';
-        document.getElementById('detailTitle').innerHTML = service.title;
-        document.getElementById('detailDesc').textContent = service.desc;
-        document.getElementById('didYouKnowText').textContent = service.didYouKnow;
-        
-        // Update features list
-        const featuresList = document.getElementById('detailFeatures');
-        featuresList.innerHTML = '';
-        service.features.forEach(feature => {
-            const li = document.createElement('li');
-            li.innerHTML = `<i class="fas fa-check-circle"></i> ${feature}`;
-            featuresList.appendChild(li);
-        });
-        
-        detailView.style.opacity = '1';
-    }, 200);
+    // Update features list
+    const featuresList = document.getElementById('detailFeatures');
+    featuresList.innerHTML = '';
+    service.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.innerHTML = `<i class="fas fa-check-circle"></i> ${feature}`;
+        featuresList.appendChild(li);
+    });
     
     // Update active state in sidebar
     document.querySelectorAll('.service-list-nav button').forEach((btn, i) => {
-        const isActive = i === index;
-        btn.classList.toggle('active', isActive);
-        btn.setAttribute('aria-selected', isActive);
+        if (i === index) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
     });
     
     // Update booking dropdown if modal is open
     const bookingSelect = document.getElementById('bookingService');
-    if (bookingSelect && document.getElementById('bookingModal').classList.contains('active')) {
+    if (bookingSelect) {
         bookingSelect.selectedIndex = index + 1;
     }
 }
 
 // Intersection Observer for scroll animations
-const observerOptions = {threshold: 0.15, rootMargin: '0px 0px -50px 0px'};
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
         }
     });
-}, observerOptions);
+}, {threshold: 0.15});
 
 // Observe sections
 document.querySelectorAll('#about, .location-section, .gallery-section').forEach(el => {
@@ -2584,18 +2247,8 @@ document.querySelectorAll('.desktop-nav a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// Add shake animation keyframes dynamically
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-        20%, 40%, 60%, 80% { transform: translateX(5px); }
-    }
-`;
-document.head.appendChild(style);
 </script>
 
 </body>
 </html>
+
