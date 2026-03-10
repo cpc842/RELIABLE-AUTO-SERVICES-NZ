@@ -132,7 +132,6 @@ body{
     scroll-behavior:smooth;
     overflow-x:hidden;
 }
-
 /* ================= HEADER ================= */
 header{
     background:var(--white);
@@ -298,6 +297,53 @@ header img{
 }
 .booking-btn-header i{
     font-size:0.9rem;
+}
+
+/* CHECK WARRANT BUTTON IN HEADER */
+.check-warrant-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--navy);
+    color:var(--white);
+    padding:10px 20px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.9rem;
+    transition:all 0.3s;
+    box-shadow:var(--shadow);
+    margin-left:10px;
+}
+.check-warrant-btn:hover{
+    background:var(--primary);
+    transform:translateY(-2px);
+    box-shadow:var(--shadow-hover);
+}
+.check-warrant-btn i{
+    font-size:0.9rem;
+}
+
+/* Mobile Nav Warrant Button */
+.mobile-nav .warrant-nav-btn{
+    margin:10px 25px 20px;
+    display:block;
+    padding:15px 20px;
+    background:var(--navy);
+    color:var(--white);
+    text-decoration:none;
+    font-size:1rem;
+    font-weight:600;
+    text-align:center;
+    border-radius:8px;
+    transition:all 0.3s;
+}
+.mobile-nav .warrant-nav-btn:hover{
+    background:var(--primary);
+    padding-left:20px;
+}
+.mobile-nav .warrant-nav-btn i{
+    margin-right:8px;
 }
 
 /* Mobile Contact Button */
@@ -2357,6 +2403,7 @@ document.querySelectorAll('.desktop-nav a[href^="#"]').forEach(anchor => {
 
 </body>
 </html>
+
 
 
 
