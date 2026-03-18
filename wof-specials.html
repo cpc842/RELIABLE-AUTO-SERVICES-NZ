@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WOF & Service Combo Specials | Qulifix Automotive Hamilton</title>
 <meta name="description" content="WOF & Service Combo Specials at Qulifix Automotive. Combine your Warrant of Fitness with service and save. Quick Lube + WOF from $179. Call 021 0601 646">
-<meta name="keywords" content="WOF Hamilton, Warrant of Fitness, WOF combo specials, car service Hamilton, Qulifix Automotive">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 :root{
@@ -241,237 +240,202 @@ header img{
     gap:6px;
 }
 
-/* ================= WOF PAGE CONTENT ================= */
-.wof-page-container{
-    max-width:900px;
+/* ================= MAIN CONTENT LAYOUT ================= */
+.wof-main-container{
+    max-width:1200px;
     margin:40px auto;
     padding:0 20px;
+    display:grid;
+    grid-template-columns:1fr 400px;
+    gap:40px;
+    align-items:start;
 }
 
-/* Yellow Header Section - Matching Reference Image */
-.wof-header-section{
-    background:linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
-    border-radius:16px 16px 0 0;
-    padding:35px 30px;
-    text-align:center;
+/* Left Side - Main Content */
+.wof-left-content{
+    background:var(--white);
+    padding:40px;
+    border-radius:16px;
     box-shadow:var(--shadow);
 }
 
-.wof-header-section h1{
-    color:#212121;
-    font-size:2rem;
-    margin:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
+.wof-left-content h1{
+    font-size:2.2rem;
+    color:var(--text);
+    margin-bottom:30px;
     font-weight:700;
 }
 
-.wof-header-section h1 i{
-    font-size:1.6rem;
-}
-
-/* Content Section */
-.wof-content-section{
-    background:var(--white);
-    border-radius:0 0 16px 16px;
-    padding:40px;
-    box-shadow:var(--shadow);
-    margin-bottom:30px;
-}
-
-.wof-intro{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.wof-intro h2{
-    font-size:1.5rem;
-    color:var(--text);
-    margin-bottom:15px;
-    font-weight:600;
-}
-
-.wof-intro p{
+.wof-left-content p{
     color:var(--text-light);
-    font-size:1.05rem;
-    line-height:1.7;
-    max-width:600px;
-    margin:0 auto;
-}
-
-/* Combo List - Matching Reference Image Style */
-.wof-combo-container{
-    background:#f8f9fa;
-    border-radius:12px;
-    padding:30px;
-    margin-bottom:30px;
-}
-
-.wof-combo-list{
-    list-style:none;
-    padding:0;
-    margin:0;
-}
-
-.wof-combo-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px;
-    margin-bottom:12px;
-    background:var(--white);
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.05);
-    transition:all 0.3s ease;
-    border-left:4px solid var(--primary);
-}
-
-.wof-combo-item:last-child{
-    margin-bottom:0;
-}
-
-.wof-combo-item:hover{
-    transform:translateX(5px);
-    box-shadow:0 4px 15px rgba(0,0,0,0.1);
-    background:#fff8e1;
-}
-
-.combo-service-name{
-    font-weight:600;
-    color:var(--text);
     font-size:1.1rem;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.wof-info-section{
+    margin-bottom:25px;
+}
+
+.wof-info-section p{
+    margin-bottom:12px;
+    color:var(--text);
+    font-size:1.05rem;
+}
+
+.special-offer{
+    background:var(--primary-light);
+    border-left:4px solid var(--primary);
+    padding:15px 20px;
+    margin:20px 0;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.special-offer i{
+    color:var(--primary);
+    font-size:1.3rem;
+}
+
+.special-offer span{
+    color:var(--primary-dark);
+    font-size:1.1rem;
+}
+
+.pickup-service{
+    background:#f8f9fa;
+    padding:20px;
+    border-radius:10px;
+    margin:20px 0;
+    border:2px solid var(--gray-light);
+}
+
+.pickup-service h3{
+    color:var(--primary);
+    font-size:1.2rem;
+    margin-bottom:10px;
     display:flex;
     align-items:center;
     gap:10px;
 }
 
-.combo-service-name i{
-    color:var(--primary);
-    font-size:0.9rem;
+.pickup-service h3 i{
+    font-size:1.1rem;
 }
 
-.combo-price-tag{
-    font-weight:700;
-    color:var(--primary);
-    font-size:1.2rem;
-    background:var(--primary-light);
-    padding:8px 16px;
-    border-radius:25px;
-    white-space:nowrap;
-}
-
-/* Info Box */
-.wof-info-box{
-    background:#e3f2fd;
-    border-left:4px solid #2196F3;
-    padding:20px;
-    border-radius:8px;
-    margin-bottom:30px;
-    display:flex;
-    gap:15px;
-    align-items:flex-start;
-}
-
-.wof-info-box i{
-    color:#2196F3;
-    font-size:1.5rem;
-    margin-top:3px;
-}
-
-.wof-info-box p{
-    color:var(--text);
-    font-size:0.95rem;
-    line-height:1.6;
+.pickup-service p{
     margin:0;
+    color:var(--text-light);
 }
 
-/* CTA Section */
-.wof-cta-section{
-    text-align:center;
-    padding:20px 0;
+.wof-description{
+    margin-top:25px;
+    padding-top:25px;
+    border-top:1px solid var(--gray-light);
 }
 
-.wof-cta-button{
+.wof-repairs-btn{
     display:inline-flex;
     align-items:center;
-    gap:12px;
-    background:var(--primary);
-    color:var(--white);
-    padding:18px 40px;
-    border-radius:30px;
+    gap:8px;
+    background:linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
+    color:#212121;
+    padding:14px 28px;
+    border-radius:8px;
     text-decoration:none;
-    font-weight:700;
-    font-size:1.2rem;
+    font-weight:600;
+    font-size:1rem;
     transition:all 0.3s;
-    box-shadow:var(--shadow);
+    margin-top:20px;
     border:none;
     cursor:pointer;
 }
 
-.wof-cta-button:hover{
-    background:var(--primary-dark);
-    transform:translateY(-3px);
-    box-shadow:var(--shadow-hover);
+.wof-repairs-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 4px 15px rgba(255,193,7,0.4);
 }
 
-.wof-phone-link{
-    display:block;
-    margin-top:20px;
-    color:var(--text-light);
+/* Right Side - Combo Specials Box */
+.wof-combo-box{
+    background:#e3f2fd;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+}
+
+.wof-combo-header{
+    background:linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
+    padding:15px 20px;
+    text-align:right;
+}
+
+.wof-combo-header h2{
+    color:#212121;
+    font-size:1.1rem;
+    margin:0;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:8px;
+}
+
+.wof-combo-header h2 i{
     font-size:1rem;
 }
 
-.wof-phone-link a{
-    color:var(--primary);
-    text-decoration:none;
-    font-weight:600;
-    font-size:1.2rem;
-}
-
-.wof-phone-link a:hover{
-    text-decoration:underline;
-}
-
-/* Additional Info */
-.wof-additional-info{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-    gap:20px;
-    margin-top:40px;
-}
-
-.wof-info-card{
-    background:var(--white);
+.wof-combo-content{
     padding:25px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    transition:all 0.3s;
 }
 
-.wof-info-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 25px rgba(0,0,0,0.1);
-}
-
-.wof-info-card i{
-    font-size:2rem;
-    color:var(--primary);
-    margin-bottom:15px;
-}
-
-.wof-info-card h3{
-    font-size:1.1rem;
+.wof-combo-content h3{
+    font-size:1.2rem;
     color:var(--text);
-    margin-bottom:10px;
+    margin-bottom:15px;
+    font-weight:600;
 }
 
-.wof-info-card p{
+.wof-combo-content > p{
     color:var(--text-light);
-    font-size:0.9rem;
-    line-height:1.5;
+    font-size:0.95rem;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.wof-price-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.wof-price-list li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 0;
+    color:var(--text);
+    font-size:0.95rem;
+    border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.wof-price-list li:last-child{
+    border-bottom:none;
+}
+
+.wof-price-list li::before{
+    content:"•";
+    color:var(--text);
+    font-size:1.2rem;
+    line-height:0;
+}
+
+.wof-price-list .price{
+    font-weight:700;
+    color:var(--primary);
+    margin-left:auto;
 }
 
 /* ================= FOOTER ================= */
@@ -500,6 +464,17 @@ footer p{
 }
 
 /* ================= MOBILE RESPONSIVE ================= */
+@media(max-width:992px){
+    .wof-main-container{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .wof-combo-box{
+        order:-1;
+    }
+}
+
 @media(max-width:768px){
     .header-contact{
         display:none;
@@ -517,47 +492,20 @@ footer p{
         height:50px;
     }
 
-    .wof-page-container{
+    .wof-main-container{
         margin:20px auto;
     }
 
-    .wof-header-section{
-        padding:25px 20px;
-    }
-
-    .wof-header-section h1{
-        font-size:1.4rem;
-        flex-direction:column;
-        gap:8px;
-    }
-
-    .wof-content-section{
+    .wof-left-content{
         padding:25px;
     }
 
-    .wof-intro h2{
-        font-size:1.2rem;
+    .wof-left-content h1{
+        font-size:1.6rem;
     }
 
-    .wof-combo-container{
-        padding:20px;
-    }
-
-    .wof-combo-item{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:12px;
-    }
-
-    .combo-price-tag{
-        align-self:flex-end;
-    }
-
-    .wof-cta-button{
-        padding:15px 30px;
+    .wof-combo-header h2{
         font-size:1rem;
-        width:100%;
-        justify-content:center;
     }
 }
 
@@ -575,16 +523,20 @@ footer p{
         font-size:0.8rem;
     }
 
-    .wof-content-section{
+    .wof-left-content{
         padding:20px;
     }
 
-    .combo-service-name{
-        font-size:1rem;
+    .wof-left-content h1{
+        font-size:1.4rem;
     }
 
-    .combo-price-tag{
-        font-size:1.1rem;
+    .wof-combo-content{
+        padding:20px;
+    }
+
+    .wof-price-list li{
+        font-size:0.9rem;
     }
 }
 </style>
@@ -600,7 +552,7 @@ footer p{
     </div>
 
     <div style="display:flex;align-items:center;gap:10px;">
-        <div class="location-item-header" onclick="window.location.href='index.html#location'">
+        <div class="location-item-header" onclick="window.location.href='./#location'">
             <i class="fas fa-map-marker-alt"></i>
             <div>
                 <small>Location</small>
@@ -620,7 +572,7 @@ footer p{
 
         <!-- BACK BUTTON -->
         <a href="./" class="back-btn">
-            <i class="fas fa-arrow-left"></i> Back to Home
+            <i class="fas fa-arrow-left"></i> Back
         </a>
 
         <!-- BOOKING BUTTON -->
@@ -634,79 +586,64 @@ footer p{
     </div>
 </header>
 
-<!-- WOF PAGE CONTENT -->
-<div class="wof-page-container">
+<!-- MAIN CONTENT -->
+<div class="wof-main-container">
 
-    <!-- Yellow Header Section - Matching Reference Image -->
-    <div class="wof-header-section">
-        <h1><i class="fas fa-clipboard-check"></i> WOF & Service Combo Specials</h1>
-    </div>
+    <!-- Left Side - Main Content -->
+    <div class="wof-left-content">
+        <h1>Motor Vehicle Warrant of Fitness (WoF)</h1>
 
-    <!-- Content Section -->
-    <div class="wof-content-section">
+        <div class="wof-info-section">
+            <p><strong>WoF testing Monday to Friday.</strong></p>
+            <p>Saturday & Sunday – by appointment only.</p>
 
-        <div class="wof-intro">
-            <h2>Need a WOF with that service?</h2>
-            <p>Combine your Service with a Warrant of Fitness test on the same day to take advantage of these discounts:</p>
+            <div class="special-offer">
+                <i class="fas fa-tag"></i>
+                <span><strong>Special offer: WoF for only $69.</strong></span>
+            </div>
+
+            <div class="pickup-service">
+                <h3><i class="fas fa-car"></i> Busy? No problem!</h3>
+                <p>Our team can pick up and drop off your vehicle.</p>
+            </div>
+
+            <p class="wof-description">A warrant of fitness (WoF) is a regular check to ensure that your vehicle meets required safety standards. Our certified inspectors thoroughly check all safety aspects including brakes, tyres, lights, steering, and structural integrity.</p>
+            <p>We provide quick and efficient service to get you back on the road safely. Same-day service available when booked in advance.</p>
         </div>
 
-        <!-- Combo List -->
-        <div class="wof-combo-container">
-            <ul class="wof-combo-list">
-                <li class="wof-combo-item">
-                    <span class="combo-service-name"><i class="fas fa-oil-can"></i> Quick Lube + WOF</span>
-                    <span class="combo-price-tag">from $179</span>
+        <button class="wof-repairs-btn" onclick="window.location.href='./#services'">
+            <i class="fas fa-wrench"></i> WOF Repairs
+        </button>
+    </div>
+
+    <!-- Right Side - Combo Specials Box -->
+    <div class="wof-combo-box">
+        <div class="wof-combo-header">
+            <h2><i class="fas fa-clipboard-check"></i> WOF & Service Combo Specials</h2>
+        </div>
+        <div class="wof-combo-content">
+            <h3>Need a WOF with that service?</h3>
+            <p>Combine your Service with a Warrant of Fitness test on the same day to take advantage of these discounts:</p>
+
+            <ul class="wof-price-list">
+                <li>
+                    <span>Quick Lube + WOF</span>
+                    <span class="price">from $179</span>
                 </li>
-                <li class="wof-combo-item">
-                    <span class="combo-service-name"><i class="fas fa-car"></i> A Service + WOF</span>
-                    <span class="combo-price-tag">from $259</span>
+                <li>
+                    <span>A Service + WOF</span>
+                    <span class="price">from $259</span>
                 </li>
-                <li class="wof-combo-item">
-                    <span class="combo-service-name"><i class="fas fa-cogs"></i> B Service + WOF</span>
-                    <span class="combo-price-tag">from $299</span>
+                <li>
+                    <span>B Service + WOF</span>
+                    <span class="price">from $299</span>
                 </li>
-                <li class="wof-combo-item">
-                    <span class="combo-service-name"><i class="fas fa-wrench"></i> C Service + WOF</span>
-                    <span class="combo-price-tag">from $379</span>
+                <li>
+                    <span>C Service + WOF</span>
+                    <span class="price">from $379</span>
                 </li>
             </ul>
         </div>
-
-        <!-- Info Box -->
-        <div class="wof-info-box">
-            <i class="fas fa-info-circle"></i>
-            <p>All WOF inspections are conducted by certified inspectors. Same-day service available when booked in advance. We ensure your vehicle meets all required safety standards.</p>
-        </div>
-
-        <!-- CTA Section -->
-        <div class="wof-cta-section">
-            <a href="./#services" class="wof-cta-button">
-                <i class="fas fa-calendar-check"></i> Book WOF Now
-            </a>
-            <p class="wof-phone-link">
-                Or call us directly: <a href="tel:0210601646">021 0601 646</a>
-            </p>
-        </div>
-
-        <!-- Additional Info -->
-        <div class="wof-additional-info">
-            <div class="wof-info-card">
-                <i class="fas fa-certificate"></i>
-                <h3>Certified Inspectors</h3>
-                <p>Our WOF inspectors are fully certified and experienced with all vehicle types.</p>
-            </div>
-            <div class="wof-info-card">
-                <i class="fas fa-clock"></i>
-                <h3>Quick Turnaround</h3>
-                <p>Most WOF inspections completed within 30-45 minutes while you wait.</p>
-            </div>
-            <div class="wof-info-card">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Safety First</h3>
-                <p>Thorough inspection of brakes, tyres, lights, steering, and structural integrity.</p>
-            </div>
-        </div>
-
     </div>
 
 </div>
