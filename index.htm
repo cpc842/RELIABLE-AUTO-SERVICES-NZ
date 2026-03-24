@@ -524,9 +524,8 @@ header img{
     padding:0 20px;
 }
 
-/* HERO SLIDER HEADINGS - H1 & H2 same style (Combined) */
-.hero-slide h1,
-.hero-slide h2{
+/* H1 Styles - First Slide Only */
+.hero-slide h1{
     font-size:2.8rem;
     margin-bottom:20px;
     font-weight:700;
@@ -534,7 +533,18 @@ header img{
     text-shadow:2px 2px 4px rgba(0,0,0,0.5);
     color:var(--white);
 }
-.hero-slide h1 span,
+.hero-slide h1 span{
+    color:var(--primary-light);
+}
+
+/* H2 Styles - Other Slides */
+.hero-slide h2{
+    font-size:2.8rem;
+    margin-bottom:20px;
+    font-weight:700;
+    line-height:1.2;
+    text-shadow:2px 2px 4px rgba(0,0,0,0.5);
+}
 .hero-slide h2 span{
     color:var(--primary-light);
 }
@@ -836,9 +846,10 @@ header img{
     margin-right:8px;
 }
 
-/* ================= ABOUT SECTION ================= */
+/* ================= ABOUT ================= */
 #about{
     padding:80px 20px;
+    text-align:center;
     background:linear-gradient(135deg,var(--white) 0%,var(--primary-light) 100%);
     margin:30px 20px;
     border-radius:20px;
@@ -861,28 +872,14 @@ header img{
     opacity:0.05;
     border-radius:50%;
 }
-
-.about-container{
-    max-width:1200px;
-    margin:0 auto;
-    position:relative;
-    z-index:1;
-}
-
-.about-header{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.about-header h2{
-    font-size:2.2rem;
-    margin-bottom:10px;
+#about h2{
+    font-size:2rem;
+    margin-bottom:15px;
     color:var(--text);
     position:relative;
     display:inline-block;
 }
-
-.about-header h2::after{
+#about h2::after{
     content:'';
     position:absolute;
     bottom:-10px;
@@ -893,102 +890,20 @@ header img{
     background:var(--primary);
     border-radius:2px;
 }
-
-.about-subtitle{
-    font-size:1.2rem;
-    color:var(--text-light);
-    margin-top:20px;
-    font-weight:500;
-}
-
-.about-intro{
-    text-align:center;
-    max-width:800px;
-    margin:0 auto 50px;
-    font-size:1.1rem;
+#about p{
+    max-width:700px;
+    margin:25px auto 0;
+    font-size:1.05rem;
     line-height:1.8;
     color:var(--text);
+    position:relative;
+    z-index:1;
 }
-
-.about-intro strong{
+#about strong{
     color:var(--primary);
     font-weight:600;
 }
 
-.about-features-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-    gap:30px;
-    margin-bottom:50px;
-}
-
-.about-feature-card{
-    background:var(--white);
-    padding:35px 30px;
-    border-radius:16px;
-    text-align:center;
-    box-shadow:var(--shadow);
-    transition:all 0.3s ease;
-    border:2px solid transparent;
-}
-
-.about-feature-card:hover{
-    transform:translateY(-5px);
-    box-shadow:var(--shadow-hover);
-    border-color:var(--primary-light);
-}
-
-.feature-icon{
-    width:70px;
-    height:70px;
-    background:var(--primary-light);
-    color:var(--primary);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 20px;
-    font-size:1.8rem;
-    transition:all 0.3s ease;
-}
-
-.about-feature-card:hover .feature-icon{
-    background:var(--primary);
-    color:var(--white);
-    transform:scale(1.1);
-}
-
-.about-feature-card h3{
-    font-size:1.3rem;
-    margin-bottom:15px;
-    color:var(--text);
-}
-
-.about-feature-card p{
-    font-size:0.95rem;
-    line-height:1.7;
-    color:var(--text-light);
-}
-
-.about-closing{
-    text-align:center;
-    max-width:700px;
-    margin:0 auto;
-    padding:30px;
-    background:rgba(255,255,255,0.7);
-    border-radius:12px;
-    border-left:4px solid var(--primary);
-}
-
-.about-closing p{
-    font-size:1.1rem;
-    color:var(--text);
-    margin:0;
-}
-
-.about-closing strong{
-    color:var(--primary);
-}
 /* ================= GALLERY SECTION ================= */
 .gallery-section{
     padding:60px 20px;
@@ -1527,53 +1442,6 @@ footer p:nth-child(3){animation-delay:0.6s;}
         grid-template-columns:1fr;
         max-width:500px;
     }
-    
-    /* About section responsive - MEKA DANNA */
-    .about-features-grid{
-        grid-template-columns:1fr;
-        max-width:500px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-}
-    
-    /* Services Split Layout Responsive */
-    .services-split-container{
-        grid-template-columns:1fr;
-    }
-    .service-sidebar{
-        position:relative;
-        top:0;
-        max-height:none;
-        order:2;
-    }
-    .service-detail-view{
-        order:1;
-        min-height:auto;
-    }
-    .service-list-nav{
-        display:grid;
-        grid-template-columns:repeat(2, 1fr);
-    }
-    .service-list-nav li{
-        border-bottom:none;
-        border-right:1px solid var(--gray-light);
-    }
-    .service-list-nav li:nth-child(even){
-        border-right:none;
-    }
-    .sidebar-book-btn{
-        margin:15px;
-    }
-    
-    .location-content{
-        grid-template-columns:1fr;
-    }
-    
-    .gallery-grid{
-        grid-template-columns:1fr;
-        max-width:500px;
-    }
 }
 
 @media(max-width:768px){
@@ -1600,7 +1468,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
     .hero-slider{
         height:400px;
     }
-    .hero-slide h1, .hero-slide h2{
+    .hero-slide h2{
         font-size:1.8rem;
         margin-bottom:15px;
     }
@@ -1641,106 +1509,6 @@ footer p:nth-child(3){animation-delay:0.6s;}
         border-right:none;
         border-bottom:1px solid var(--gray-light);
     }
-    
-    #about{
-        margin:20px 15px;
-        padding:50px 15px;
-    }
-    #about h2{
-        font-size:1.5rem;
-    }
-    #about p{
-        font-size:0.95rem;
-    }
-    
-    .about-header h2{
-        font-size:1.6rem;
-    }
-    .about-subtitle{
-        font-size:1rem;
-    }
-    .about-intro{
-        font-size:0.95rem;
-    }
-    .about-feature-card{
-        padding:25px 20px;
-    }
-    
-    .gallery-section{
-        margin:20px 15px;
-        padding:40px 15px;
-    }
-    .gallery-section h2{
-        font-size:1.5rem;
-        margin-bottom:25px;
-    }
-    .gallery-item{
-        height:200px;
-    }
-    
-    .location-section{
-        margin:20px 15px;
-        padding:40px 15px;
-    }
-    .location-section h2{
-        font-size:1.5rem;
-        margin-bottom:25px;
-    }
-    
-    .map-container iframe{
-        height:250px;
-    }
-    
-    .contact-details-box{
-        padding:20px;
-    }
-    .contact-list li{
-        font-size:0.9rem;
-    }
-    
-    .working-hours-box{
-        padding:25px;
-    }
-    .working-hours-box h3{
-        font-size:1.1rem;
-    }
-    .hours-list li{
-        font-size:0.9rem;
-        padding:8px 0;
-    }
-    
-    .directions-btn{
-        padding:14px;
-        font-size:1rem;
-    }
-    
-    footer{
-        padding:30px 15px;
-    }
-    footer p{
-        font-size:0.85rem;
-    }
-    
-    .floating-booking-btn{
-        padding:12px 20px;
-        font-size:0.9rem;
-        bottom:15px;
-        right:15px;
-    }
-    
-    .booking-modal-content{
-        max-height:85vh;
-    }
-    .booking-modal-header{
-        padding:20px;
-    }
-    .booking-modal-header h3{
-        font-size:1.3rem;
-    }
-    .booking-modal-body{
-        padding:20px;
-    }
-}
     
     #about{
         margin:20px 15px;
@@ -1833,7 +1601,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
     .hero-slider{
         height:350px;
     }
-    .hero-slide h1, .hero-slide h2{
+    .hero-slide h2{
         font-size:1.5rem;
     }
     .hero-slide p{
@@ -1890,16 +1658,9 @@ footer p:nth-child(3){animation-delay:0.6s;}
         padding:10px 18px;
         font-size:0.85rem;
     }
-    
-    /* About section small mobile - MEKA DANNA */
-    .about-closing{
-        padding:20px;
-    }
-    .about-closing p{
-        font-size:0.95rem;
-    }
 }
 </style>
+<base target="_blank">
 <base target="_blank">
 </head>
 
@@ -1999,16 +1760,16 @@ footer p:nth-child(3){animation-delay:0.6s;}
 <!-- HERO SLIDER -->
 <div class="hero-slider" id="home">
 
-    <!-- First Slide - H1 (Main SEO Heading) -->
+    <!-- First Slide - 70% size -->
     <div class="hero-slide active" style="background:url('hero02.png') center/100% auto no-repeat; background-color: #212121;">
         <div>
-            <h1>Your One Stop <span>Automotive</span> Repair Shop in Hamilton</h1>
+            <h1>Your One Stop <span>Automotive</span><br>Repair Shop</h1>
             <p>Dealer standard service without paying dealer premium prices. Expert care for your vehicle.</p>
             <a href="tel:0210601646">Call Now</a>
         </div>
     </div>
     
-    <!-- Second Slide - H2 -->
+    <!-- Second Slide - 70% size -->
     <div class="hero-slide" style="background:url('hero02.png') center/100% auto no-repeat; background-color: #212121;">
         <div>
             <h2>Professional <span>WOF</span> Inspections</h2>
@@ -2017,7 +1778,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
         </div>
     </div>
     
-    <!-- Third Slide - H2 -->
+    <!-- Third Slide - 70% size -->
     <div class="hero-slide" style="background:url('hero02.png') center/100% auto no-repeat; background-color: #212121;">
         <div>
             <h2>Expert <span>Engine</span> Repairs</h2>
@@ -2033,6 +1794,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
     </div>
 
 </div>
+
 <!-- SERVICES SECTION - SPLIT LAYOUT -->
 <section class="services-section" id="services">
     <h2>Our Services</h2>
@@ -2079,7 +1841,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
                 </li>
                 <li>
                     <button onclick="selectService(1)" data-index="1">
-                        <i class="fas fa-cogs"></i>
+                        <i class="fas fa-engine"></i>
                         Engine Repair & Rebuilding
                     </button>
                 </li>
@@ -2103,7 +1865,7 @@ footer p:nth-child(3){animation-delay:0.6s;}
                 </li>
                 <li>
                     <button onclick="selectService(5)" data-index="5">
-                        <i class="fas fa-truck"></i>
+                        <i class="fas fa-truck-fleet"></i>
                         Fleet Servicing
                     </button>
                 </li>
@@ -2185,42 +1947,42 @@ footer p:nth-child(3){animation-delay:0.6s;}
     
     <div class="gallery-grid">
         
-        <a href="gallery1.png" target="_blank" class="gallery-item">
+        <a href="images/gallery1.png" target="_blank" class="gallery-item">
             <img src="gallery1.png" alt="Gallery 1">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="gallery2.png" target="_blank" class="gallery-item">
+        <a href="images/gallery2.png" target="_blank" class="gallery-item">
             <img src="gallery2.png" alt="Gallery 2">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="gallery3.png" target="_blank" class="gallery-item">
+        <a href="images/gallery3.png" target="_blank" class="gallery-item">
             <img src="gallery3.png" alt="Gallery 3">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="gallery4.png" target="_blank" class="gallery-item">
+        <a href="images/gallery4.png" target="_blank" class="gallery-item">
             <img src="gallery4.png" alt="Gallery 4">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="gallery5.png" target="_blank" class="gallery-item">
+        <a href="images/gallery5.png" target="_blank" class="gallery-item">
             <img src="gallery5.png" alt="Gallery 5">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
             </div>
         </a>
         
-        <a href="gallery6.png" target="_blank" class="gallery-item">
+        <a href="images/gallery6.png" target="_blank" class="gallery-item">
             <img src="gallery6.png" alt="Gallery 6">
             <div class="gallery-overlay">
                 <i class="fas fa-external-link-alt"></i>
@@ -2296,8 +2058,8 @@ footer p:nth-child(3){animation-delay:0.6s;}
 
 <!-- FOOTER -->
 <footer>
-    <p>&copy; 2026 Qulifix Automotive. All Rights Reserved.</p>
-    <p>154 Collins Road, Melville, Hamilton 3206, New Zealand | 021 0601 646</p>
+    <p>&copy; 2026 Reliable Auto Services. All Rights Reserved.</p>
+    <p>154 Collins Road, Melville, Hamilton 3206, New Zealand | 02 1060 1646</p>
     <p>Professional Automotive Care You Can Trust</p>
 </footer>
 
