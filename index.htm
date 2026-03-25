@@ -1465,10 +1465,15 @@ footer p:nth-child(3){animation-delay:0.6s;}
         padding:6px;
     }
     
-    .hero-slider{
-        height:400px;
+   .hero-slider{
+        height:550px;           /* 400px සිට වෙනස් කරන්න */
+        min-height:60vh;        /* නව line එක */
     }
-    .hero-slide h2{
+    .hero-slide{
+        background-size:cover !important;        /* නව line එක */
+        background-position:center center !important;  /* නව line එක */
+    }
+    .hero-slide h2, .hero-slide h1{   /* h1 එකතු කරන්න */
         font-size:1.8rem;
         margin-bottom:15px;
     }
