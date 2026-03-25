@@ -2334,7 +2334,7 @@ const serviceData = [
     }
 ];
 
-// Select Service Function
+// Select Service Function - UPDATED with auto-scroll
 function selectService(index) {
     const service = serviceData[index];
     
@@ -2366,6 +2366,20 @@ function selectService(index) {
     const bookingSelect = document.getElementById('bookingService');
     if (bookingSelect) {
         bookingSelect.selectedIndex = index + 1;
+    }
+    
+    // ========== NEW: Auto-scroll to service detail view on mobile ==========
+    if (window.innerWidth <= 992) {
+        const serviceDetailView = document.getElementById('serviceDetailView');
+        if (serviceDetailView) {
+            // Small delay to let the content update first
+            setTimeout(() => {
+                serviceDetailView.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }, 100);
+        }
     }
 }
 
