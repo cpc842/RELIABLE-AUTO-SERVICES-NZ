@@ -2212,20 +2212,45 @@ function nextSlide() {
 
 setInterval(nextSlide, 5000);
 
-// Booking Modal Functions
+// ================= BOOKING MODAL FUNCTIONS =================
+
 function openBookingModal() {
-    document.getElementById('bookingModal').classList.add('active');
+    const modal = document.getElementById('bookingModal');
+    const dateInput = document.getElementById('bookingDate');
+    
+    if (!modal) return;
+    
+    modal.classList.add('active');
     document.body.style.overflow = 'hidden';
     
-    // Set minimum date to today
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('bookingDate').setAttribute('min', today);
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    }
 }
 
 function closeBookingModal() {
-    document.getElementById('bookingModal').classList.remove('active');
+    const modal = document.getElementById('bookingModal');
+    const form = document.getElementById('bookingForm');
+    
+    if (!modal) return;
+    
+    modal.classList.remove('active');
     document.body.style.overflow = '';
+    
+    // Form එක reset කරන්න
+    if (form) form.reset();
 }
+
+// ESC key එකෙන් close කරන්න
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('bookingModal');
+        if (modal && modal.classList.contains('active')) {
+            closeBookingModal();
+        }
+    }
+});
 
 // Open booking modal with specific service pre-selected
 function openBookingModalWithService(serviceValue) {
